@@ -10,3 +10,4 @@ echo -e '  \e[0m' >> issue
 
 cp issue /etc/issue
 cat /etc/issue
+rm issue
