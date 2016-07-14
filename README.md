@@ -1,4 +1,6 @@
-![desktop](https://cloud.githubusercontent.com/assets/12384784/16828686/6834dd4e-4992-11e6-9391-db45b6567c17.png)
+##Dotfiles
+
+![](https://cloud.githubusercontent.com/assets/12384784/16828732/e440c592-4992-11e6-8a3c-160a0c299f4c.png)
 
 ### Window manager
 - [i3-wm](https://i3wm.org/)
