@@ -44,7 +44,7 @@ if [ -z "$1" ]; then
     option_all="c"
     lines=$(wc -l < "$CONFIG_LOCATIONS")
     current_line=1
-elif [ "$1" = "save" -o "$1" = "load" -o "¡1" = "diff" -o "$1" = "git-add" ]; then
+elif [ "$1" = "save" -o "$1" = "load" -o "$1" = "diff" -o "$1" = "git-add" ]; then
     option_all=$1
 else
     echo "usage: ./dotfilesmgr <save|load|diff|git-add>"
