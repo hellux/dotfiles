@@ -62,16 +62,16 @@ for config_path in $(cat $CONFIG_LOCATIONS); do
         option=$option_all
     fi
     case $option in
-        save|s )
+        s|save )
             copy $current $saved;;
-        load|l )
+        l|load )
             copy $current $backup
             if [ copy_success=true ]; then
                 copy $saved $current
             else
                 perr "Failed to save backup to $backup, will not overwrite without backup."
             fi;;
-        diff|d )
+        d|diff )
             if [ -r $current -a -r $saved ]; then
                 df=$(diff $current $saved)
                 if [ $1 -eq 0 -a "$df" ]; then
@@ -81,7 +81,7 @@ for config_path in $(cat $CONFIG_LOCATIONS); do
             else
                 perr "Can't read $current and/or $saved."
             fi;;
-        git-add|g )
+        g|git-add )
             if [ -r $saved ]; then
                 git add $saved
             else
