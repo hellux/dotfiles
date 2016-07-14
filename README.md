@@ -21,3 +21,12 @@
 ### Shell
 - [zsh](http://www.zsh.org/)
   - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+
+### Fonts
+- [Source Code Pro](https://github.com/adobe-fonts/source-code-pro) (i3)
+- [Font Awesome](http://fontawesome.io/) (bar icons)
+- [Lucida Grande](https://aur.archlinux.org/packages/ttf-mac-fonts/) (GTK)
+
+### GTK
+- [Arc theme](https://github.com/horst3180/arc-theme)
+- [Paper icons](https://snwh.org/paper/icons)
