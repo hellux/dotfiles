@@ -85,11 +85,15 @@ for config_path in $(cat $CONFIG_LOCATIONS); do
         s|save )
             copy $current $saved;;
         l|load )
-            copy $current $backup
-            if [ copy_success=true ]; then
-                copy $saved $current
+            if [ -r $saved]; then
+                copy $current $backup
+                if [ copy_success=true ]; then
+                    copy $saved $current
+                else
+                    perr "Failed to save backup to $backup, will not overwrite without backup."
+                fi
             else
-                perr "Failed to save backup to $backup, will not overwrite without backup."
+                perr "No file at $saved to load."
             fi;;
         d|diff )
             diff_color $current $saved;;
