@@ -82,7 +82,7 @@ for config_path in $(cat $CONFIG_LOCATIONS); do
                 cat /dev/null # added because df won't get assigned without anything here
                 if [ -n "$df" -a $? -eq 0 ]; then
                     psuc "$current <> $saved:"
-                    echo $df
+                    echo "$df"
                 fi
             else
                 perr "Can't read $current and/or $saved."
