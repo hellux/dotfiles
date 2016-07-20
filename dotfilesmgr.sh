@@ -47,7 +47,8 @@ function diff_color {
         cat /dev/null # added because df won't get assigned without anything here
         if [ -n "$df" -a $? -eq 0 ]; then
             echo -e "\e[1;31m$current\e[0m <> \e[1;32m$saved\e[0m:"
-            echo -e "$(diff $1 $2 | sed -e '/^</ s/</\\e[31m</;s/$/\\e[0m/' -e '/^>/ s/>/\\e[32m>/;s/$/\\e[0m/')"
+            echo -e "$(diff $1 $2 | sed -e '/^</ s/</\\e[31m</;s/$/\\e[0m/' \
+                                        -e '/^>/ s/>/\\e[32m>/;s/$/\\e[0m/')"
         fi
     else
         perr "Can't read $current and/or $saved."
