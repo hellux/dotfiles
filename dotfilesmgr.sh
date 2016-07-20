@@ -60,7 +60,7 @@ cd $(dirname ${BASH_SOURCE[0]})
 
 # handle args
 if [ -z "$1" ]; then
-    echo -e "Select \e[1ms\e[0mave, \e[1ml\e[0moad, \e[1mg\e[0mit-add, \e[1md\e[0miff or \e[1mS\€[0mkip."
+    echo -e "Select \e[1ms\e[0mave, \e[1ml\e[0moad, \e[1mg\e[0mit-add, \e[1md\e[0miff or \e[1mS\e[0mkip."
     option_all="c"
     lines=$(wc -l < "$CONFIG_LOCATIONS")
     current_line=1
