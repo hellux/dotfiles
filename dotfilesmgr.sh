@@ -44,9 +44,12 @@ function copy {
 function diff_color {
     if [ -r $current -a -r $saved ]; then
         df=$(diff $current $saved)
-        cat /dev/null # added because df won't get assigned without anything here
+        cat /dev/null # df won't get assigned without a command here
         if [ -n "$df" -a $? -eq 0 ]; then
             echo -e "\e[1;31m$current\e[0m <> \e[1;32m$saved\e[0m:"
+            # look for arrow at start of line, if found:
+            # -replace arrow with color code + arrow
+            # -replace end of line with attribute reset code
             echo -e "$(diff $1 $2 | sed -e '/^</ s/</\\e[31m</;s/$/\\e[0m/' \
                                         -e '/^>/ s/>/\\e[32m>/;s/$/\\e[0m/')"
         fi
@@ -61,7 +64,7 @@ cd $(dirname ${BASH_SOURCE[0]})
 # handle args
 if [ -z "$1" ]; then
     echo -e "Select \e[1ms\e[0mave, \e[1ml\e[0moad, \e[1mg\e[0mit-add, \e[1md\e[0miff or \e[1mS\e[0mkip."
-    option_all="c"
+    option_all="per-entry"
     lines=$(wc -l < "$CONFIG_LOCATIONS")
     current_line=1
 elif [ "$1" = "save" -o "$1" = "load" -o "$1" = "diff" -o "$1" = "git-add" ]; then
@@ -75,7 +78,7 @@ for config_path in $(cat $CONFIG_LOCATIONS); do
     current=$HOME/$config_path
     saved=$CONFIG_STORAGE/$config_path
     backup=$BACKUP/$config_path
-    if [ "$option_all" = "c" ]; then
+    if [ "$option_all" = "per-entry" ]; then
         read -p "$current_line/$lines $config_path: " option
         current_line=$((current_line + 1))
     else
