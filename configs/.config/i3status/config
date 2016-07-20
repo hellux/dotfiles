@@ -41,7 +41,7 @@ cpu_usage {
 
 wireless _first_ {
     format_up = " %essid"
-    format_down = "not connected"
+    format_down = " not connected"
 }
 
 battery 0 {
