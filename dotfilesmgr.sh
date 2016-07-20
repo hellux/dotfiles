@@ -85,7 +85,7 @@ for config_path in $(cat $CONFIG_LOCATIONS); do
         s|save )
             copy $current $saved;;
         l|load )
-            if [ -r $saved]; then
+            if [ -r $saved ]; then
                 copy $current $backup
                 if [ copy_success=true ]; then
                     copy $saved $current
