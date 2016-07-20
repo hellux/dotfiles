@@ -4,5 +4,6 @@
 .config/i3/toggle_governor.sh
 .config/i3status/config
 .config/i3status/wrapper.py
+.config/dunst/dunstrc
 .xinitrc
 .vimrc
