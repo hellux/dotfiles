@@ -1,3 +1,4 @@
+#!/bin/bash
 # dotfilesmgr - manage dotfiles repository
 #
 # This script parses config paths from a text file and
@@ -17,10 +18,12 @@ CONFIG_LOCATIONS="paths.txt"
 CONFIG_STORAGE="configs"
 BACKUP="backup"
 
+# colored print functions
 function perr { echo -e "\e[0;31m$1\e[0m"; }
 function psuc { echo -e "\e[0;34m$1\e[0m"; }
 
-function copy {
+# copies $1 to $2
+function copy { #
     if [ -r $1 ]; then
         mkdir -p $(dirname $2)
         cp $1 $2
@@ -37,10 +40,12 @@ function copy {
     fi
 }
 
+# cd to dir of script
 cd $(dirname ${BASH_SOURCE[0]})
 
+# handle args
 if [ -z "$1" ]; then
-    echo -e "Select \e[1ms\e[0mave, \e[1ml\e[0moad, \e[1mg\e[0mit-add or \e[1md\e[0miff."
+    echo -e "Select \e[1ms\e[0mave, \e[1ml\e[0moad, \e[1mg\e[0mit-add, \e[1md\e[0miff or \e[1mS\€[0mkip."
     option_all="c"
     lines=$(wc -l < "$CONFIG_LOCATIONS")
     current_line=1
@@ -50,7 +55,7 @@ else
     echo "usage: ./dotfilesmgr <save|load|diff|git-add>"
 fi
 
-
+# loop through config files
 for config_path in $(cat $CONFIG_LOCATIONS); do
     current=$HOME/$config_path
     saved=$CONFIG_STORAGE/$config_path
@@ -74,7 +79,8 @@ for config_path in $(cat $CONFIG_LOCATIONS); do
         d|diff )
             if [ -r $current -a -r $saved ]; then
                 df=$(diff $current $saved)
-                if [ $1 -eq 0 -a "$df" ]; then
+                cat /dev/null # added because df won't get assigned without anything here
+                if [ -n "$df" -a $? -eq 0 ]; then
                     psuc "$current <> $saved:"
                     echo $df
                 fi
