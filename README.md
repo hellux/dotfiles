@@ -1,6 +1,6 @@
 ##Dotfiles
 
-![](https://cloud.githubusercontent.com/assets/12384784/16828732/e440c592-4992-11e6-8a3c-160a0c299f4c.png)
+![](https://cloud.githubusercontent.com/assets/12384784/17043551/f6bc0878-4fb7-11e6-80d1-50caf21ba81e.png)
 
 ### Window manager
 - [i3-wm](https://i3wm.org/)
@@ -13,10 +13,11 @@
   - [lineheight](http://tools.suckless.org/dmenu/patches/line-height)
 
 ### Terminal
-- [st](st.suckless.org)
-  - [scrollback](http://st.suckless.org/patches/scrollback)
-  - [hidecursor](http://st.suckless.org/patches/hidecursor)
-  - [solarized](http://st.suckless.org/patches/solarized)
+- [rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode.html)
+
+### Text Editor
+- [Vim](http://vim.org)
+ - [Solarized colorscheme](https://github.com/altercation/vim-colors-solarized)
 
 ### Shell
 - [zsh](http://www.zsh.org/)
