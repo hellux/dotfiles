@@ -21,17 +21,24 @@ map j gj
 map k gk
 map Q <nop>
 
+"fix scrolling
+set mouse=a
+
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
 "set statusline+=%f "add filepath to statusbar
-"set laststatus=2 "show statusbar permanenutly
+"set laststatus=2 "show statusbar permanently
 
 set nocompatible
 filetype plugin indent on 
 
 set listchars=eol:¶ "set symbol for newline
 set number "show line numbers
+
+"colors
+set background=dark
+colorscheme solarized
 
 "toggle whitespace indicators:
 nnoremap <F2> :set nolist!<CR> 
