@@ -8,3 +8,5 @@
 .config/i3/toggle_governor.sh
 .config/i3status/config
 .config/i3status/wrapper.py
+.config/qutebrowser/keys.conf
+.config/qutebrowser/qutebrowser.conf

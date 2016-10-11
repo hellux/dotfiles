@@ -85,9 +85,8 @@ for config_path in $(cat $CONFIG_LOCATIONS); do
         option=$option_all
     fi
     case $option in
-        s|save )
-            copy $current $saved;;
-        l|load )
+        s|save) copy $current $saved;;
+        l|load)
             if [ -r $saved ]; then
                 copy $current $backup
                 if [ copy_success=true ]; then
@@ -98,9 +97,8 @@ for config_path in $(cat $CONFIG_LOCATIONS); do
             else
                 perr "No file at $saved to load."
             fi;;
-        d|diff )
-            diff_color $current $saved;;
-        g|git-add )
+        d|diff) diff_color $current $saved;;
+        g|git-add)
             if [ -r $saved ]; then
                 git add $saved
             else
