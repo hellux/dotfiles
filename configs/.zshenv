@@ -5,7 +5,7 @@ alias i3conf="vim ~/.config/i3/config"
 alias i3stconf="vim ~/.config/i3status/config"
 
 #prefixes
-alias wifi="sudo netctl start"
+alias wifi="sudo netctl stop-all && sudo netctl start"
 alias br="xrandr --output eDP1 --brightness"
 alias v="vim"
 alias sv="sudo vim"
@@ -16,8 +16,8 @@ alias diff="colordiff"
 
 # shortcuts
 alias _="sudo"
-alias sagen="sage -c 'noteboot(automatic_login=True)'"
+alias sagen="sage -c 'notebook(automatic_login=True)'"
 alias wtf="dmesg | tail"
 alias hmm="journalctl -xe"
 alias pls="sudo !!"
-alias ct="urxvt -cd $(pwd) &"
+alias ct='urxvt -cd $(pwd) &'

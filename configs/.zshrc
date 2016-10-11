@@ -4,11 +4,14 @@ export ZSH=/home/noah/.oh-my-zsh
 # Path for Go compiler
 export GOPATH=/home/noah/.go
 
+# Path to pynaoqi
+#export PYTHONPATH=${PYTHONPATH}:"/usr/lib/python2.7/pynaoqi-python2.7-2.1.3.3-linux64"
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="blinks"
+#ZSH_THEME="blinks"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
@@ -80,4 +83,5 @@ export ARCHFLAGS="-arch x86_64"
 # disable ctrl-s freeze in vim
 stty -ixon 
 
+./src/scripts/tty_solar.sh
 command fortune -s science wisdom computers people | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n

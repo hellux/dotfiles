@@ -50,7 +50,9 @@ set $wspace9 "9 "
 set $wspace10 "10 "
 
 # commands
+set $browser "exec qutebrowser"
 set $terminal "exec urxvt"
+set $terminal_last_dir "exec urxvt -cd ~1"
 set $launcher exec --no-startup-id dmenu_run -lh 22 -fn \
 'Source Code Pro:size=9' -nb '#222222' -nf '#bbbbbb' -sb '#285577' \
 -sf '#FFFFFF' -p 'Run:'
@@ -78,6 +80,8 @@ set $mod Mod4
 ### WORKSPACE ASSIGNMENTS
 
 # 1 web
+assign [class="^Dwb$"] $wspace1
+assign [class="qutebrowser"] $wspace1
 assign [class="Firefox"] $wspace1
 assign [class="^chromium$"] $wspace1
 
@@ -123,6 +127,7 @@ assign [class="^Google Play Music Desktop Player$"] $wspace9
 
 # 10 video
 assign [class="^Vlc$"] $wspace10
+assign [class="^mpv$"] $wspace10
 
 ### OPTIONS
 
@@ -142,6 +147,8 @@ floating_modifier $mod
 ### KEYBIND ASSIGNMENTS
 
 bindsym $mod+Shift+Return $terminal
+bindsym $mod+Shift+BackSpace $terminal_last_dir
+bindsym $mod+o $browser
 bindsym $mod+p $launcher
 bindsym $mod+Shift+b $set_backlight
 bindsym $mod+Shift+v $set_volume
