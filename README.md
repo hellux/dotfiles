@@ -19,6 +19,9 @@
  - Solarized colorscheme
  - Gruvbox colorscheme
 
+### Browser
+- qutebrowser
+
 ### Shell
 - zsh
   - grml-zsh-config
