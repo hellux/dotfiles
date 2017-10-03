@@ -53,7 +53,7 @@ set $toggle_layout ~/scripts/layout.sh
 set $toggle_governor ~/.config/i3/toggle_governor.sh
 set $suspend systemctl suspend
 set $lock ~/.config/i3/flock/locK
-set $launcher exec --no-startup-id dmenu_run -lh 24 -fn \
+set $launcher exec --no-startup-id dmenu_run -lh 30 -fn \
 'Source Code Pro:size=14' -nb '#222222' -nf '#bbbbbb' -sb '#285577' \
 -sf '#FFFFFF' -p 'Run:'
 
