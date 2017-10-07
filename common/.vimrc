@@ -9,6 +9,7 @@ set softtabstop=4
 syntax on
 set scrolloff=5
 set relativenumber
+set number
 set cursorline
 set display=lastline
 set wildmenu
