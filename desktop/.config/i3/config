@@ -49,7 +49,6 @@ set $launcher "exec --no-startup-id rofi -show run"
 set $browser "exec qutebrowser"
 set $screenshot "exec scrot"
 
-set $toggle_governor "exec sh ~/scripts/governor.sh"
 set $toggle_audio "exec sh ~/scripts/audio.sh"
 set $toggle_ru "exec sh ~/scripts/jcyken.sh"
 set $toggle_qw "exec sh ~/scripts/qwerty.sh"
@@ -72,7 +71,7 @@ workspace $ws9 output $mon1
 workspace $ws10 output $mon1
 
 # 1 web
-assign [class="qutebrowser"] $ws1
+assign [class="^qutebrowser$"] $ws1
 
 # 2 term
 
@@ -80,13 +79,27 @@ assign [class="qutebrowser"] $ws1
 
 # 4 game / video
 assign [class="^mpv$"] $ws4
+assign [class="^RocketLeague$"] $ws4
+assign [class="^dota2$"] $ws4
+assign [class="^csgolinux64$"] $ws4
+assign [class="^Shenzhen.bin.x86_64$"] $ws4
+assign [title="^TIS-100$"] $ws4
+
+for_window [class="^RocketLeague$"] fullscreen
+for_window [class="^mpv$"] fullscreen
+for_window [class="^dota2$"] fullscreen
 
 # 5
 
 # 6
 
 # 7 steam
-assign [title="^Steam$"] $ws7
+assign [class="^Steam$"] $ws7
+for_window [class="^Steam$" title="^Друзья$"] floating enable
+for_window [class="^Steam$" title="Новости"] floating enable
+for_window [class="^Steam$" title="Чат$"] floating enable
+for_window [class="^Steam$" title="^Настройки$"] floating enable
+for_window [class="^Steam$" title="^Steam Guard"] floating enable
 
 # 8 transfer
 assign [class="^qBittorrent$"] $ws8
@@ -99,7 +112,7 @@ assign [class="^discord$"] $ws10
 ### OPTIONS
 
 # gaps
-gaps inner 20
+gaps inner 7
 gaps outer 0
 
 workspace $ws6 gaps inner 0
@@ -122,7 +135,7 @@ new_window 1pixel
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango: "Hack 11"
+font pango:Source Code Pro, FontAwesome 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -140,9 +153,6 @@ bindsym $mod+F9 $toggle_ru
 
 # take screenshot
 bindsym $mod+Shift+S $screenshot
-
-# toggle cpu governor profile
-bindsym $mod+Shift+g $toggle_governor
 
 # toggle audio output
 bindsym $mod+Shift+b $toggle_audio
@@ -230,11 +240,6 @@ mode "resize" {
         bindsym j resize shrink height $length px or $length ppt
         bindsym l resize grow width $length px or $length ppt
 
-        #bindsym Left resize shrink width 5 px or 5 ppt
-        #bindsym Up resize grow height 5 px or 5 ppt
-        #bindsym Down resize shrink height 5 px or 5 ppt
-        #bindsym Right resize grow width 5 px or 5 ppt
-
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -249,13 +254,11 @@ bar {
     status_command i3blocks
     i3bar_command i3bar -t
     position top
-    font pango:Source Code Pro, FontAwesome 11
     strip_workspace_numbers yes
-    separator_symbol " "
+    tray_output 0
+
     bindsym button4 nop
     bindsym button5 nop
-    tray_output 0
-    height 30
     
 	colors {
         background          $transparent
