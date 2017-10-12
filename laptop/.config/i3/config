@@ -54,7 +54,7 @@ set $toggle_governor ~/.config/i3/toggle_governor.sh
 set $suspend systemctl suspend
 set $lock ~/.config/i3/flock/locK
 set $launcher exec --no-startup-id dmenu_run -lh 29 -fn \
-'Source Code Pro:size=11' -nb '#222222' -nf '#bbbbbb' -sb '#285577' \
+'Source Code Pro:size=7' -nb '#222222' -nf '#bbbbbb' -sb '#285577' \
 -sf '#FFFFFF' -p 'Run:'
 
 set $backlight_inc light -A 10

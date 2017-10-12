@@ -1,4 +1,4 @@
-Xft.dpi:                    120
+Xft.dpi:                    180
 Xft.antialias:              true
 Xft.rgba:                   rgb
 Xft.hinting:                true
@@ -21,8 +21,8 @@ URxvt.intensityStyles:      false
 
 ! Font
 URxvt.allow_bold:           true
-URxvt*font: xft:Source Code Pro:size=12
-URxvt*boldFont: xft:Source Code Pro:size=12:style=bold
+URxvt*font: xft:Source Code Pro:size=9
+URxvt*boldFont: xft:Source Code Pro:size=9:style=bold
 
 ! Scrollbar
 URxvt.scrollStyle:          plain
