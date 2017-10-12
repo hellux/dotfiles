@@ -8,5 +8,6 @@ c.fonts.web.size.minimum_logical = 18
 c.downloads.remove_finished = 0
 
 config.bind('e', 'hint')
+config.bind('E', 'hint all tab')
 config.bind('q', 'spawn mpv {url}');
 config.bind('Q', 'spawn mpv {hint-url}');
