@@ -5,6 +5,9 @@ c.fonts.web.size.default_fixed = 18
 c.fonts.web.size.minimum = 18
 c.fonts.web.size.minimum_logical = 18
 
+c.content.geolocation = False
+c.content.headers.accept_language = "ru-RU,ru"
+
 c.downloads.remove_finished = 0
 
 config.bind('e', 'hint')
