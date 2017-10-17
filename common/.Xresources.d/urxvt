@@ -1,0 +1,36 @@
+URxvt.depth:                32
+URxvt.geometry:             90x30
+URxvt.transparent:          false
+URxvt.fading:               30
+URxvt.urgentOnBell:         true
+URxvt.visualBell:           false
+URxvt.loginShell:           true
+URxvt.saveLines:            500
+URxvt.internalBorder:       3
+URxvt.lineSpace:            -1
+URxvt*letterSpace: -2
+
+! fixes colors
+URxvt.intensityStyles:      false
+
+! Font
+URxvt.allow_bold:           true
+URxvt*font: xft:Source Code Pro:size=9
+URxvt*boldFont: xft:Source Code Pro:size=9:style=bold
+
+! Scrollbar
+URxvt.scrollStyle:          plain
+URxvt.scrollBar:            false
+
+! Perl extensions
+URxvt.perl-ext-common:      default,matcher,selection-to-clipboard
+URxvt.url-launcher:         /usr/bin/xdg-open
+URxvt.matcher.button:       1
+
+! Cursor
+URxvt.cursorBlink:          true
+URxvt.cursorColor:          #657b83
+URxvt.cursorUnderline:      false
+
+! Pointer
+URxvt.pointerBlank:         false
