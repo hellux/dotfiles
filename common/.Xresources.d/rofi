@@ -1,0 +1,15 @@
+rofi.modi: run
+rofi.font: Hack 17
+rofi.width: 100
+rofi.lines: 5
+rofi.columns: 1
+!                  bg              fg       altbg           hlbg            hlfg
+rofi.color-normal: argb: E282828, #ebdbb2, argb: 4C282828, argb: ccebdbb2, #282828
+rofi.color-urgent: argb: 3C282828, #ebdbb2, argb: 4C282828, argb: ccebdbb2, #282828
+rofi.color-active: argb: 3C282828, #ebdbb2, argb: 4C282828, argb: ccebdbb2, #282828
+!                  bg              border          separator
+rofi.color-window: argb: EC282828, argb: cc282828, argb: cc282828
+rofi.bw: 0
+rofi.location: 2
+rofi.padding: 100
+rofi.fuzzy: false
