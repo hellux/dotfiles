@@ -15,8 +15,8 @@ URxvt.intensityStyles:      false
 
 ! Font
 URxvt.allow_bold:           true
-URxvt*font: xft:Source Code Pro:size=9
-URxvt*boldFont: xft:Source Code Pro:size=9:style=bold
+URxvt*font: xft:Source Code Pro:size=13
+URxvt*boldFont: xft:Source Code Pro:size=13:style=bold
 
 ! Scrollbar
 URxvt.scrollStyle:          plain
