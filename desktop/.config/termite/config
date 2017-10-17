@@ -1,5 +1,5 @@
 [options]
-font = Source Code Pro 7.5
+font = Source Code Pro 11.48
 browser = qutebrowser
 clickable_url = true
 scrollback_lines = 999999
