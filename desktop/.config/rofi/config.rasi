@@ -6,18 +6,12 @@
 
 * {
     background-color: #282828ee;
+    text-color: #ebdbb2;
+    font: "Hack 17";
 }
 
 #listview {
     lines: 5;
-}
-
-#element {
-    font: "Hack 17";
-}
-
-#element normal {
-    text-color: #ebdbb2;
 }
 
 #element selected {
