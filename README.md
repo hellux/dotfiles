@@ -8,22 +8,22 @@
 ### Launcher
 - dmenu
   - lineheight patch
-- rofi
+- Rofi
 
 ### Terminal
 - rxvt-unicode
-- termite
+- Termite
 
 ### Text Editor
 - Vim
- - Solarized colorscheme
- - Gruvbox colorscheme
+  - Solarized colorscheme
+  - Gruvbox colorscheme
 
 ### Browser
 - qutebrowser
 
 ### Shell
-- zsh
+- Zsh
   - grml-zsh-config
 
 ### Fonts
