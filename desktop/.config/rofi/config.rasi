@@ -1,0 +1,27 @@
+#window {
+    location: north;
+    width: 100%;
+    padding: 100;
+}
+
+* {
+    background-color: #282828ee;
+}
+
+#listview {
+    lines: 5;
+}
+
+#element {
+    font: "Hack 17";
+}
+
+#element normal {
+    text-color: #ebdbb2;
+}
+
+#element selected {
+    background-color: #ebdbb2cc;
+    text-color: #282828;
+}
+

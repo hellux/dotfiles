@@ -84,6 +84,7 @@ assign [class="^dota2$"] $ws4
 assign [class="^csgo_linux64$"] $ws4
 assign [class="^Shenzhen.bin.x86_64$"] $ws4
 assign [title="^TIS-100$"] $ws4
+assign [title="^SpaceChem$"] $ws4
 assign [class="^metro$"] $ws4
 
 for_window [class="^RocketLeague$"] fullscreen
