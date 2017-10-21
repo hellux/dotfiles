@@ -86,6 +86,7 @@ assign [class="^Shenzhen.bin.x86_64$"] $ws4
 assign [title="^TIS-100$"] $ws4
 assign [title="^SpaceChem$"] $ws4
 assign [class="^metro$"] $ws4
+assign [class="^Lightning.bin.x86_64$"] $ws4
 
 for_window [class="^RocketLeague$"] fullscreen
 for_window [class="^mpv$"] fullscreen
