@@ -1,11 +1,12 @@
 #window {
+    background-color: #282828ee;
     location: north;
     width: 100%;
     padding: 100;
 }
 
 * {
-    background-color: #282828ee;
+    background-color: #00000000;
     text-color: #ebdbb2;
     font: "Hack 17";
 }
