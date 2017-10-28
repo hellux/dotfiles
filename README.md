@@ -25,6 +25,7 @@
 ### Shell
 - Zsh
   - grml-zsh-config
+  - fzf
 
 ### Fonts
 - Source Code Pro
