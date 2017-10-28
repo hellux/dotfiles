@@ -1,10 +1,13 @@
 wp https://www.wikipedia.org/
-wpe https://en.wikipedia.org/wiki/Main_Page
-wps https://sv.wikipedia.org/wiki/Portal:Huvudsida
-we https://en.wiktionary.org/wiki/Wiktionary:Main_Page
-ws https://sv.wiktionary.org/wiki/Wiktionary:Huvudsida
-tr https://translate.google.se/?hl=ru&tab=iT
-ytr https://translate.yandex.ru/
+wps https://sv.wikipedia.org/wiki
+wpe https://en.wikipedia.org/wiki
+wpr https://ru.wikipedia.org/wiki/
+
+ws https://sv.wiktionary.org/wiki/Wiktionary
+we https://en.wiktionary.org/wiki/Wiktionary
+wr https://ru.wiktionary.org/wiki/Wiktionary
+
+tr https://translate.yandex.ru/
 s https://www.youtube.com/feed/subscriptions
 r https://www.reddit.com/
 cs https://teachyourselfcs.com/
