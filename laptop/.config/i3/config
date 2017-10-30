@@ -1,50 +1,24 @@
-# i3 config file (v4) SWAY
-#
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
-
 output "*" background /home/noah/wp_polar.png fill
 exec xrdb -merge -I$HOME ~/.Xresources
 
 ### VARIABLE ASSIGNMENTS
 
 ## colors
-
-# general
 set $gn_bg "#222222"
 set $gn_text "#bbbbbb"
 set $gn_sep "#555555"
-# selected / focused / highlighted
-set $sl_b "#4C7899"
-set $sl_bg "#285577"
-set $sl_text "#FFFFFF"
-# inactive
-set $in_b "#333333"
-set $in_bg "#222222"
-set $in_text "#888888"
-# urgent
-set $ur_b "#2F343A"
-set $ur_bg "#904400"
-set $ur_text "#FFFFFF"
-# mode
-set $md_b "#2F434A"
-set $md_bg "#900000"
-set $md_text "#FFFFFF"
-# active
-set $ac_b "#333333"
-set $ac_bg "#5F676A"
-set $ac_text "FFFFFFF"
 
 # workspace names
-set $wspace1 "1 "
-set $wspace2 "2 "
-set $wspace3 "3 "
-set $wspace4 "4 "
-set $wspace5 "5"
-set $wspace6 "6"
-set $wspace7 "7 "
-set $wspace8 "8 "
-set $wspace9 "9 "
-set $wspace10 "10"
+set $wspace1 "A "
+set $wspace2 "O "
+set $wspace3 "E "
+set $wspace4 "U "
+set $wspace5 "I"
+set $wspace6 "Å"
+set $wspace7 "Ä "
+set $wspace8 "Ö "
+set $wspace9 "P "
+set $wspace10 "Y"
 
 # commands
 set $browser "qutebrowser"
@@ -99,9 +73,7 @@ assign [class="^Steam$"] $wspace7
 hide_edge_borders both
 
 # remove titlebar
-border 1pixel 
 default_border none
-new_window 1pixel
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -238,30 +210,10 @@ bar {
     status_command      i3status | ~/.config/i3status/wrapper.py
     separator_symbol    " | "
 	position		    top
-    bindsym button4 nop
-    bindsym button5 nop
-    #tray_output         none
    
     colors {
         background          $gn_bg
         statusline          $gn_text
         separator           $gn_sep
-
-        #                   border  bg      text     indicator
-        focused_workspace   $sl_b   $sl_bg  $sl_text #FFFFFF
-        active_workspace    $ac_b   $ac_bg  $ac_text #FFFFFF
-        inactive_workspace  $in_b   $in_bg  $in_text #FFFFFF
-        urgent_workspace    $ur_b   $ur_bg  $ur_text #FFFFFF
-        binding_mode        $md_b   $md_bg  $md_text #FFFFFF
     }
 }
-
-### COLORS
-
-# class                 border  backgr. text     indicator child_border
-client.focused          #4c7899 #285577 $sl_text #2e9ef4   #285577
-client.focused_inactive $in_b   #5f676a $sl_text #484e50   #5f676a
-client.unfocused        $ac_b   #222222 $in_text #292d2e   #222222
-client.urgent           $ur_b   #900000 $ur_text #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff  #000000   #0c0c0c
-client.background       #ffffff
