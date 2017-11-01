@@ -1,8 +1,8 @@
 ### AUTOSTART 
 
 exec --no-startup-id compton -b
-exec --no-startup-id ~/.fehbg #set wallpaper (last used)
 exec --no-startup-id dunst #desktop notification daemon, ~/.config/dunst/dunstrc
+exec ~/.fehbg #set wallpaper (last used)
 
 ### VARIABLE ASSIGNMENTS
 
