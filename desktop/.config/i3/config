@@ -50,8 +50,8 @@ set $browser "exec qutebrowser"
 set $screenshot "exec scrot"
 
 set $toggle_audio "exec sh ~/scripts/audio.sh"
-set $toggle_ru "exec sh ~/scripts/jcyken.sh"
-set $toggle_qw "exec sh ~/scripts/qwerty.sh"
+set $toggle_qw "exec sh ~/scripts/toggle_layout.sh se dvorak se ''"
+set $toggle_ru "exec sh ~/scripts/toggle_layout.sh se dvorak ru ''"
 
 # mod key
 set $mod Mod1
@@ -150,7 +150,7 @@ bindsym $mod+Shift+Return $terminal
 bindsym $mod+Shift+f $browser
 bindsym $mod+g $launcher
 bindsym $mod+F10 $toggle_qw
-bindsym $mod+F9 $toggle_ru 
+bindsym $mod+F9 $toggle_ru
 
 ## operations
 
