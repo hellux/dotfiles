@@ -2,7 +2,7 @@
 
 exec --no-startup-id compton -b
 exec --no-startup-id dunst #desktop notification daemon, ~/.config/dunst/dunstrc
-exec ~/.fehbg #set wallpaper (last used)
+exec --no-startup-id ~/.fehbg
 
 ### VARIABLE ASSIGNMENTS
 
@@ -49,7 +49,7 @@ set $launcher "exec --no-startup-id rofi -show run"
 set $browser "exec qutebrowser"
 set $screenshot "exec scrot"
 
-set $toggle_audio "exec sh ~/scripts/audio.sh"
+set $toggle_audio "exec sh ~/scripts/toggle_audio.sh 1 2"
 set $toggle_qw "exec sh ~/scripts/toggle_layout.sh se dvorak se ''"
 set $toggle_ru "exec sh ~/scripts/toggle_layout.sh se dvorak ru ''"
 
