@@ -1,5 +1,5 @@
 output "*" background /home/noah/wp_polar.png fill
-exec xrdb -merge -I$HOME ~/.Xresources
+exec --no-startup-id ~/scripts/init_laptop.sh
 
 ### VARIABLE ASSIGNMENTS
 
