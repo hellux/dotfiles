@@ -1,0 +1,33 @@
+color hdrdefault color142 default
+color quoted blue default
+color signature blue default
+color attachment yellow default
+color prompt brightmagenta default
+color message yellow default
+color error brightred default
+color indicator color229 color237
+color status color235 color246 
+color tree default default
+color normal default default
+color markers red default
+color search default default
+color tilde brightmagenta default
+color index blue default ~F
+color index color175 color236 "~N|~O"
+
+color header brightgreen default ^From:
+color header brightcyan default ^To:
+color header brightcyan default ^Reply-To:
+color header brightcyan default ^Cc:
+color header brightblue default ^Subject:
+color body brightred default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
+color body brightblue default (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
+
+color quoted cyan black
+color quoted1 yellow black
+color quoted2 red black
+color quoted3 green black
+color quoted4 cyan black
+color quoted5 yellow black
+color quoted6 red black
+color quoted7 green black
