@@ -1,0 +1,98 @@
+# Credentials
+source "~/.mutt/user"
+
+# Folder names
+set my_drafts = "Drafts"
+set my_drafts_noquote = "Drafts"
+set my_sent = "Sent<quote-char><space>Items"
+set my_sent_noquote = "Sent Items"
+set my_trash = "Deleted<quote-char><space>Items"
+set my_trash_noquote = "Deleted Items"
+
+# IMAP
+set imap_user = "$my_username@$my_domain"
+set imap_pass = $my_password
+
+set folder = "imaps://$my_server/"
+set spoolfile= +INBOX
+set postponed= +$my_drafts_noquote
+set record = +$my_sent_noquote
+set trash = +$my_trash_noquote
+mailboxes
+
+set imap_check_subscribed = "yes"
+set imap_list_subscribed = "yes"
+set timeout = 15
+set mail_check = 90
+set imap_keepalive = 180
+set imap_idle
+unset mark_old
+set ssl_use_sslv3 = yes
+
+# SMTP
+set realname = $my_realname
+set from = "$my_username@$my_domain"
+set use_from = yes
+set smtp_pass = $my_password
+set hostname = $my_domain
+set smtp_url = "smtp://$my_username@$my_domain@$my_server:$my_smtp_port/"
+set ssl_force_tls = yes
+set smtp_authenticators = "login"
+
+# File storage
+set message_cachedir = "~/.mutt/message_cache"
+set header_cache = "~/.mutt/header_cache"
+set tmpdir = "~/.mutt/tmp"
+
+# Appearance
+auto_view text/html
+
+color hdrdefault color142 default
+color quoted blue default
+color signature blue default
+color attachment yellow default
+color prompt brightmagenta default
+color message yellow default
+color error brightred default
+color indicator color229 color237
+color status color235 color246 
+color tree default default
+color normal default default
+color markers red default
+color search default default
+color tilde brightmagenta default
+color index blue default ~F
+color index color175 color236 "~N|~O"
+
+color header brightgreen default ^From:
+color header brightcyan default ^To:
+color header brightcyan default ^Reply-To:
+color header brightcyan default ^Cc:
+color header brightblue default ^Subject:
+color body brightred default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
+color body brightblue default (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
+
+# Binds
+
+bind generic,index,pager \Cf       next-page
+bind generic,index,pager \Cb       previous-page
+bind generic             gg        first-entry
+bind generic,index       G         last-entry
+bind pager               gg        top
+bind pager               G         bottom
+bind generic,pager       \Cy       previous-line
+bind generic,index,pager \Ce       next-line
+bind generic,index,pager \Cd       half-down
+bind generic,index,pager \Cu       half-up
+bind generic             zt        current-top
+bind generic             zz        current-middle
+bind generic             zb        current-bottom
+bind index               za        collapse-thread
+bind index               zA        collapse-all
+bind index,pager         N         search-opposite
+bind index               <Backtab> previous-new-then-unread
+
+macro index gi "<change-folder>=INBOX<enter>" "Go to Inbox"
+macro index gs "<change-folder>=$my_sent<enter>" "Go to Sent"
+macro index gd "<change-folder>=$my_drafts<enter>" "Go to Drafts"
+macro index gt "<change-folder>=$my_trash<enter>" "Go to Trash"
