@@ -42,7 +42,6 @@ set smtp_authenticators = "login"
 # File storage
 set message_cachedir = "~/.mutt/message_cache"
 set header_cache = "~/.mutt/header_cache"
-set tmpdir = "~/.mutt/tmp"
 
 # Appearance
 auto_view text/html

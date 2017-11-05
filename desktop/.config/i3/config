@@ -32,10 +32,10 @@ set $ws1 "1 "
 set $ws2 "2 "
 set $ws3 "3 "
 set $ws4 "4 "
-set $ws5 "5"
-set $ws6 "6 "
+set $ws5 "5 "
+set $ws6 "6 "
 set $ws7 "7 "
-set $ws8 "8 "
+set $ws8 "8 "
 set $ws9 "9 "
 set $ws10 "10 "
 
@@ -73,28 +73,29 @@ workspace $ws10 output $mon1
 # 1 web
 assign [class="^qutebrowser$"] $ws1
 
-# 2 term
+# 2 console
 
 # 3 vim
 
 # 4 game / video
 assign [class="^mpv$"] $ws4
-assign [class="^RocketLeague$"] $ws4
-assign [class="^dota2$"] $ws4
+
 assign [class="^csgo_linux64$"] $ws4
+assign [class="^dota2$"] $ws4
+assign [class="^RocketLeague$"] $ws4
 assign [class="^Shenzhen.bin.x86_64$"] $ws4
 assign [title="^TIS-100$"] $ws4
 assign [title="^SpaceChem$"] $ws4
 assign [class="^metro$"] $ws4
 assign [class="^Lightning.bin.x86_64$"] $ws4
 
-for_window [class="^RocketLeague$"] fullscreen
 for_window [class="^mpv$"] fullscreen
 for_window [class="^dota2$"] fullscreen
+for_window [class="^RocketLeague$"] fullscreen
 
-# 5
+# 5 misc
 
-# 6
+# 6 mutt 
 
 # 7 steam
 assign [class="^Steam$"] $ws7
@@ -104,10 +105,11 @@ for_window [class="^Steam$" title="Чат$"] floating enable
 for_window [class="^Steam$" title="^Настройки$"] floating enable
 for_window [class="^Steam$" title="^Steam Guard"] floating enable
 
-# 8 transfer
+# 8 documents / transfer
 assign [class="^qBittorrent$"] $ws8
+assign [class="^Zathura$"] $ws8
 
-# 9 music
+# 9 cmus
 
 # 10 voice
 assign [class="^discord$"] $ws10

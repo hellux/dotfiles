@@ -16,3 +16,5 @@ set number
 set cursorline
 set display=lastline
 set wildmenu
+
+set spelllang=en,sv
