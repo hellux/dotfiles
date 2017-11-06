@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=vim
+Type=Application
+Exec=vim %F
+Terminal=true
+Categories=TextEditor
