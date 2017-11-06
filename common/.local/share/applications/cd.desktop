@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=cd
-Type=Application
-Exec=sh -c "cd %F"
-Terminal=true
-Categories=Utility;FileManager
