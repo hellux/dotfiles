@@ -6,7 +6,7 @@
 
 config_dir=$1
 
-[ -z $config_dir ] && exit
+[ -z $config_dir ] && exit 1
 
 configs=$(find $config_dir -type f)
 
