@@ -33,6 +33,10 @@ font Source Code Pro 14
 
 ### KEYBIND ASSIGNMENTS
 
+bindcode $mod+Shift+29 $browser
+bindcode $mod+30 $launcher
+bindsym $mod+Shift+Return $terminal
+
 bindsym $mod+F7 $lock
 bindsym $mod+Shift+g $toggle_governor
 

@@ -63,6 +63,10 @@ font pango:Source Code Pro, FontAwesome 11
 
 ### KEYBIND ASSIGNMENTS
 
+bindcode $mod+Shift+29 $browser
+bindcode $mod+30 $launcher
+bindsym $mod+Shift+Return $terminal
+
 # toggle audio output
 bindcode $mod+Shift+57 $toggle_audio
 
