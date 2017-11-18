@@ -1,0 +1,90 @@
+output "*" background /home/noah/wp_polar.png fill
+exec --no-startup-id ~/scripts/init_laptop.sh
+
+### VARIABLE ASSIGNMENTS
+
+## colors
+set $gn_bg "#222222"
+set $gn_text "#bbbbbb"
+set $gn_sep "#555555"
+
+# commands
+set $terminal exec urxvt
+set $lock exec ~/.config/i3/flock/locK
+set $launcher exec --no-startup-id dmenu_run -lh 30 -fn \
+'Source Code Pro:size=12' -nb '#222222' -nf '#bbbbbb' -sb '#285577' \
+-sf '#FFFFFF' -p 'Run:'
+
+set $backlight_inc light -A 10
+set $backlight_dec light -U 10
+
+set $volume_toggle amixer set Master toggle
+set $volume_inc amixer set Master 5+
+set $volume_dec amixer set Master 5-
+
+### OPTIONS
+
+# remove titlebar
+default_border none
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font Source Code Pro 14
+
+### KEYBIND ASSIGNMENTS
+
+bindsym $mod+F7 $lock
+bindsym $mod+Shift+g $toggle_governor
+
+## ACPI/function keys
+
+# volume keys 
+bindsym XF86AudioLowerVolume exec $volume_dec
+bindsym XF86AudioRaiseVolume exec $volume_inc
+bindsym $mod+F11 exec $volume_dec
+bindsym $mod+F12 exec $volume_inc
+
+# brightness keys
+bindsym XF86MonBrightnessDown exec $backlight_dec
+bindsym XF86MonBrightnessUp exec $backlight_inc
+
+bindsym $mod+F1 exec $suspend
+bindsym $mod+F5 exec $backlight_dec
+bindsym $mod+F6 exec $backlight_inc
+
+## built-in
+
+# change monitor
+bindsym $mod+m move workspace to output left
+
+### MODES
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        set $length 1
+        bindsym h resize shrink width $length px or $length ppt
+        bindsym k resize grow height $length px or $length ppt
+        bindsym j resize shrink height $length px or $length ppt
+        bindsym l resize grow width $length px or $length ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+
+### i3 BAR
+
+# Start i3bar to display a workspace bar
+bar {
+    status_command      i3status | ~/.config/i3status/wrapper.py
+    separator_symbol    " | "
+	position		    top
+   
+    colors {
+        background          $gn_bg
+        statusline          $gn_text
+        separator           $gn_sep
+    }
+}

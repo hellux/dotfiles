@@ -1,31 +1,4 @@
-### AUTOSTART 
-
-exec --no-startup-id compton -b
-exec --no-startup-id dunst #desktop notification daemon, ~/.config/dunst/dunstrc
-exec --no-startup-id ~/.fehbg
-
 ### VARIABLE ASSIGNMENTS
-
-## colors
-set_from_resource $darkred     color1  #000000
-set_from_resource $red         color9  #000000
-set_from_resource $darkgreen   color2  #000000
-set_from_resource $green       color10 #000000
-set_from_resource $darkyellow  color3  #000000
-set_from_resource $yellow      color11 #000000
-set_from_resource $darkblue    color4  #000000
-set_from_resource $blue        color12 #000000
-set_from_resource $darkmagenta color5  #000000
-set_from_resource $magenta     color13 #000000
-set_from_resource $darkcyan    color6  #000000
-set_from_resource $cyan        color14 #000000
-set_from_resource $darkwhite   color7  #000000
-set_from_resource $white       color15 #000000
-
-# Use custom colors for black
-set $black       #282828
-set $darkblack   #1d2021
-set $transparent #00000000
 
 # workspace names
 set $ws1 "1 "
@@ -39,19 +12,12 @@ set $ws8 "8 "
 set $ws9 "9 "
 set $ws10 "10 "
 
-# monitors
-set $mon0 "DVI-D-0"
-set $mon1 "HDMI-A-1"
-
 # commands
-set $terminal "exec termite"
-set $launcher "exec --no-startup-id rofi -show run"
-set $browser "exec qutebrowser"
-set $screenshot "exec scrot"
-
-set $toggle_audio "exec sh ~/scripts/toggle_audio.sh 1 2"
-set $toggle_qw "exec sh ~/scripts/toggle_layout.sh se dvorak se ''"
-set $toggle_ru "exec sh ~/scripts/toggle_layout.sh se dvorak ru ''"
+set $browser exec qutebrowser
+set $screenshot exec scrot
+set $toggle_jtsyken exec ~/scripts/toggle_layout.sh se dvorak ru ""
+set $toggle_qwerty exec ~/scripts/toggle_layout.sh se dvorak se ""
+set $suspend exec systemctl suspend
 
 # mod key
 set $mod Mod1
@@ -116,51 +82,25 @@ assign [class="^discord$"] $ws10
 
 ### OPTIONS
 
-# gaps
-gaps inner 7
-gaps outer 0
-
-workspace $ws6 gaps inner 0
-workspace $ws7 gaps inner 0
-workspace $ws8 gaps inner 0
-workspace $ws9 gaps inner 0
-workspace $ws10 gaps inner 0
-
-force_display_urgency_hint 0 ms
-focus_on_window_activation urgent
-
-floating_minimum_size -1 x -1
-floating_maximum_size -1 x -1
-
 # hide borders indicating next window position
 hide_edge_borders both
-
-# remove titlebar
-new_window 1pixel
-
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-font pango:Source Code Pro, FontAwesome 11
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 ### KEYBIND ASSIGNMENTS
 
-## applications
 bindcode $mod+Shift+29 $browser
 bindcode $mod+30 $launcher
-bindsym $mod+Shift+return $terminal
-bindsym $mod+f9 $toggle_ru
-bindsym $mod+f10 $toggle_qw
-
-## operations
+bindsym $mod+Shift+Return $terminal
+bindsym $mod+F9 $toggle_jtsyken
+bindsym $mod+F10 $toggle_qwerty
 
 # take screenshot
 bindcode $mod+Shift+47 $screenshot
 
-# toggle audio output
-bindcode $mod+Shift+57 $toggle_audio
+# take screenshot
+bindcode $mod+Shift+47 $screenshot
 
 ## built-in
 
@@ -192,10 +132,10 @@ bindcode $mod+29 fullscreen toggle
 bindcode $mod+46 layout toggle split
 
 # toggle tiling / floating
-bindcode $mod+Shift+65 floating toggle
+bindcode $mod+Shift+Space floating toggle
 
 # change focus between tiling / floating windows
-bindcode $mod+65 focus mode_toggle
+bindsym $mod+Space focus mode_toggle
 
 # switch to workspace
 bindcode $mod+38 workspace $ws1
@@ -222,8 +162,8 @@ bindcode $mod+Shift+27 move container to workspace $ws9
 bindcode $mod+Shift+28 move container to workspace $ws10
 
 # next / prev workspace
-bindcode $mod+23 workspace next
-bindcode $mod+Shift+23 workspace prev
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
 
 # last workspace
 bindcode $mod+61 workspace back_and_forth
@@ -252,38 +192,3 @@ mode "resize" {
 }
 bindcode $mod+r mode "resize"
 
-### i3 BAR
-
-# Start i3bar to display a workspace bar
-bar {
-    status_command i3blocks
-    i3bar_command i3bar -t
-    position top
-    strip_workspace_numbers yes
-    tray_output 0
-
-    bindsym button4 nop
-    bindsym button5 nop
-    
-	colors {
-        background          $transparent
-        statusline          $white
-        separator           $transparent
-
-        #                	border  		bg      		text     		indicator
-        focused_workspace  	$transparent 	$transparent 	$darkwhite
-        inactive_workspace 	$transparent 	$transparent 	$white
-        active_workspace   	$transparent 	$transparent 	$white
-        urgent_workspace   	$darkred     	$darkred     	$transparent
-        binding_mode       	$darkred     	$darkred     	$transparent
-    }
-}
-
-### COLORS
-
-# class                 border  	backgr. 	text     	indicator 	child_border
-client.focused          $black      $black      $darkwhite  $darkblack  $darkblack
-client.unfocused        $black      $black      $white      $darkblack  $darkblack
-client.focused_inactive $black      $black      $white      $darkblack  $darkblack
-client.urgent           $darkred    $darkred    $black      $darkred    $darkred
-client.background       $black

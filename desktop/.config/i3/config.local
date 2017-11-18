@@ -1,0 +1,103 @@
+### AUTOSTART 
+
+exec --no-startup-id compton -b
+exec --no-startup-id dunst #desktop notification daemon, ~/.config/dunst/dunstrc
+exec --no-startup-id ~/.fehbg
+
+### VARIABLE ASSIGNMENTS
+
+## colors
+set_from_resource $darkred     color1  #000000
+set_from_resource $red         color9  #000000
+set_from_resource $darkgreen   color2  #000000
+set_from_resource $green       color10 #000000
+set_from_resource $darkyellow  color3  #000000
+set_from_resource $yellow      color11 #000000
+set_from_resource $darkblue    color4  #000000
+set_from_resource $blue        color12 #000000
+set_from_resource $darkmagenta color5  #000000
+set_from_resource $magenta     color13 #000000
+set_from_resource $darkcyan    color6  #000000
+set_from_resource $cyan        color14 #000000
+set_from_resource $darkwhite   color7  #000000
+set_from_resource $white       color15 #000000
+
+# Use custom colors for black
+set $black       #282828
+set $darkblack   #1d2021
+set $transparent #00000000
+
+# monitors
+set $mon0 "DVI-D-0"
+set $mon1 "HDMI-A-1"
+
+# commands
+set $terminal "exec termite"
+set $launcher "exec --no-startup-id rofi -show run"
+set $toggle_audio "exec sh ~/scripts/toggle_audio.sh 1 2"
+
+### OPTIONS
+
+# gaps
+gaps inner 7
+gaps outer 0
+
+workspace $ws6 gaps inner 0
+workspace $ws7 gaps inner 0
+workspace $ws8 gaps inner 0
+workspace $ws9 gaps inner 0
+workspace $ws10 gaps inner 0
+
+force_display_urgency_hint 0 ms
+focus_on_window_activation urgent
+
+floating_minimum_size -1 x -1
+floating_maximum_size -1 x -1
+
+# remove titlebar
+new_window 1pixel
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:Source Code Pro, FontAwesome 11
+
+### KEYBIND ASSIGNMENTS
+
+# toggle audio output
+bindcode $mod+Shift+57 $toggle_audio
+
+### i3 BAR
+
+# Start i3bar to display a workspace bar
+bar {
+    status_command i3blocks
+    i3bar_command i3bar -t
+    position top
+    strip_workspace_numbers yes
+    tray_output 0
+
+    bindsym button4 nop
+    bindsym button5 nop
+    
+	colors {
+        background          $transparent
+        statusline          $white
+        separator           $transparent
+
+        #                	border  		bg      		text     		indicator
+        focused_workspace  	$transparent 	$transparent 	$darkwhite
+        inactive_workspace 	$transparent 	$transparent 	$white
+        active_workspace   	$transparent 	$transparent 	$white
+        urgent_workspace   	$darkred     	$darkred     	$transparent
+        binding_mode       	$darkred     	$darkred     	$transparent
+    }
+}
+
+### COLORS
+
+# class                 border  	backgr. 	text     	indicator 	child_border
+client.focused          $black      $black      $darkwhite  $darkblack  $darkblack
+client.unfocused        $black      $black      $white      $darkblack  $darkblack
+client.focused_inactive $black      $black      $white      $darkblack  $darkblack
+client.urgent           $darkred    $darkred    $black      $darkred    $darkred
+client.background       $black
