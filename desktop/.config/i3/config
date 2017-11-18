@@ -148,109 +148,109 @@ floating_modifier $mod
 ### KEYBIND ASSIGNMENTS
 
 ## applications
-bindsym $mod+Shift+Return $terminal
-bindsym $mod+Shift+f $browser
-bindsym $mod+g $launcher
-bindsym $mod+F10 $toggle_qw
-bindsym $mod+F9 $toggle_ru
+bindcode $mod+Shift+29 $browser
+bindcode $mod+30 $launcher
+bindsym $mod+Shift+return $terminal
+bindsym $mod+f9 $toggle_ru
+bindsym $mod+f10 $toggle_qw
 
 ## operations
 
 # take screenshot
-bindsym $mod+Shift+S $screenshot
+bindcode $mod+Shift+47 $screenshot
 
 # toggle audio output
-bindsym $mod+Shift+b $toggle_audio
+bindcode $mod+Shift+57 $toggle_audio
 
 ## built-in
 
 # kill focused window
-bindsym $mod+c kill
+bindcode $mod+31 kill
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindcode $mod+44 focus left
+bindcode $mod+54 focus down
+bindcode $mod+55 focus up
+bindcode $mod+33 focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindcode $mod+Shift+44 move left
+bindcode $mod+Shift+54 move down
+bindcode $mod+Shift+55 move up
+bindcode $mod+Shift+33 move right
 
 # split in horizontal orientation
-bindsym $mod+v split h 
+bindcode $mod+60 split h 
 
 # split in vertical orientation
-bindsym $mod+s split v
+bindcode $mod+47 split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindcode $mod+29 fullscreen toggle
 
 # toggle horizontal / vertical split
-bindsym $mod+n layout toggle split
+bindcode $mod+46 layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindcode $mod+Shift+65 floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindcode $mod+65 focus mode_toggle
 
 # switch to workspace
-bindsym $mod+a workspace $ws1
-bindsym $mod+o workspace $ws2
-bindsym $mod+e workspace $ws3
-bindsym $mod+u workspace $ws4
-bindsym $mod+i workspace $ws5
-bindsym $mod+aring workspace $ws6
-bindsym $mod+adiaeresis workspace $ws7
-bindsym $mod+odiaeresis workspace $ws8
-bindsym $mod+p workspace $ws9
-bindsym $mod+y workspace $ws10
+bindcode $mod+38 workspace $ws1
+bindcode $mod+39 workspace $ws2
+bindcode $mod+40 workspace $ws3
+bindcode $mod+41 workspace $ws4
+bindcode $mod+42 workspace $ws5
+bindcode $mod+24 workspace $ws6
+bindcode $mod+25 workspace $ws7
+bindcode $mod+26 workspace $ws8
+bindcode $mod+27 workspace $ws9
+bindcode $mod+28 workspace $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+a move container to workspace $ws1
-bindsym $mod+Shift+o move container to workspace $ws2
-bindsym $mod+Shift+e move container to workspace $ws3
-bindsym $mod+Shift+u move container to workspace $ws4
-bindsym $mod+Shift+i move container to workspace $ws5
-bindsym $mod+Shift+aring move container to workspace $ws6
-bindsym $mod+Shift+adiaeresis move container to workspace $ws7
-bindsym $mod+Shift+odiaeresis move container to workspace $ws8
-bindsym $mod+Shift+p move container to workspace $ws9
-bindsym $mod+Shift+y move container to workspace $ws10
+bindcode $mod+Shift+38 move container to workspace $ws1
+bindcode $mod+Shift+39 move container to workspace $ws2
+bindcode $mod+Shift+40 move container to workspace $ws3
+bindcode $mod+Shift+41 move container to workspace $ws4
+bindcode $mod+Shift+42 move container to workspace $ws5
+bindcode $mod+Shift+24 move container to workspace $ws6
+bindcode $mod+Shift+25 move container to workspace $ws7
+bindcode $mod+Shift+26 move container to workspace $ws8
+bindcode $mod+Shift+27 move container to workspace $ws9
+bindcode $mod+Shift+28 move container to workspace $ws10
 
 # next / prev workspace
-bindsym $mod+Tab workspace next
-bindsym $mod+Shift+Tab workspace prev
+bindcode $mod+23 workspace next
+bindcode $mod+Shift+23 workspace prev
 
 # last workspace
-bindsym $mod+z workspace back_and_forth
+bindcode $mod+61 workspace back_and_forth
 
 # reload the configuration file
-bindsym $mod+Shift+t reload
+bindcode $mod+Shift+45 reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindcode $mod+Shift+32 restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+q exit
+bindcode $mod+Shift+53 exit
 
 ### MODES
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
         set $length 1
-        bindsym h resize shrink width $length px or $length ppt
-        bindsym k resize grow height $length px or $length ppt
-        bindsym j resize shrink height $length px or $length ppt
-        bindsym l resize grow width $length px or $length ppt
+        bindcode 44 resize shrink width $length px or $length ppt
+        bindcode 55 resize grow height $length px or $length ppt
+        bindcode 54 resize shrink height $length px or $length ppt
+        bindcode 33 resize grow width $length px or $length ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+        bindcode $mod+32 mode "default"
 }
-bindsym $mod+r mode "resize"
+bindcode $mod+r mode "resize"
 
 ### i3 BAR
 
