@@ -99,9 +99,6 @@ bindsym $mod+F10 $toggle_qwerty
 # take screenshot
 bindcode $mod+Shift+47 $screenshot
 
-# take screenshot
-bindcode $mod+Shift+47 $screenshot
-
 ## built-in
 
 # kill focused window
@@ -132,10 +129,10 @@ bindcode $mod+29 fullscreen toggle
 bindcode $mod+46 layout toggle split
 
 # toggle tiling / floating
-bindcode $mod+Shift+Space floating toggle
+bindcode $mod+Shift+65 floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+Space focus mode_toggle
+bindcode $mod+65 focus mode_toggle
 
 # switch to workspace
 bindcode $mod+38 workspace $ws1
