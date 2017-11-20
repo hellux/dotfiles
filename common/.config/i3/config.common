@@ -74,6 +74,7 @@ for_window [class="^Steam$" title="^Steam Guard"] floating enable
 # 8 documents / transfer
 assign [class="^qBittorrent$"] $ws8
 assign [class="^Zathura$"] $ws8
+assign [title=".pdf$"] $ws8
 
 # 9 cmus
 
