@@ -1,0 +1,3 @@
+[Desktop Entry]
+Exec=mutt %F
+Terminal=true
