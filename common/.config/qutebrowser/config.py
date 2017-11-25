@@ -1,3 +1,7 @@
+from binds_ru import bind_russian
+
+bind_russian(config)
+
 ui_size = 12
 c.fonts.monospace = 'Source Code Pro'
 c.fonts.completion.entry = '%dpt monospace' % ui_size
@@ -21,10 +25,13 @@ c.fonts.web.size.minimum_logical = content_size
 
 c.content.geolocation = False
 c.content.headers.accept_language = 'ru-RU,ru'
+c.content.javascript.enabled = False
 
 c.downloads.remove_finished = 0
 
+c.hints.chars = 'aoeuhtnsåäöpgcrl.qjkmwvz'
+
 config.bind('e', 'hint')
 config.bind('E', 'hint all tab')
-config.bind('q', 'spawn ~/scripts/stream.sh {url}');
-config.bind('Q', 'hint links spawn ~/scripts/stream.sh {hint-url}');
+config.bind('q', 'spawn ~/scripts/stream.sh {url}')
+config.bind('Q', 'hint links spawn ~/scripts/stream.sh {hint-url}')
