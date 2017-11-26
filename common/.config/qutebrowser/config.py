@@ -25,7 +25,6 @@ c.fonts.web.size.minimum_logical = content_size
 
 c.content.geolocation = False
 c.content.headers.accept_language = 'ru-RU,ru'
-c.content.javascript.enabled = False
 
 c.downloads.remove_finished = 0
 

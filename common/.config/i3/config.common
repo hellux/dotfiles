@@ -6,11 +6,19 @@ set $ws2 "2 "
 set $ws3 "3 "
 set $ws4 "4 "
 set $ws5 "5 "
+
 set $ws6 "6 "
 set $ws7 "7 "
 set $ws8 "8 "
 set $ws9 "9 "
-set $ws10 "10 "
+set $ws10 "10 "
+
+set $ws11 "11 "
+set $ws12 "12 "
+set $ws13 "13 "
+set $ws14 "14 "
+set $ws15 "15 "
+
 
 # commands
 set $browser exec qutebrowser
@@ -24,18 +32,6 @@ set $mod Mod1
 
 ### WORKSPACE ASSIGNMENTS
 
-# Monitor
-workspace $ws1 output $mon0
-workspace $ws2 output $mon0
-workspace $ws3 output $mon0
-workspace $ws4 output $mon0
-workspace $ws5 output $mon0
-workspace $ws6 output $mon1
-workspace $ws7 output $mon1
-workspace $ws8 output $mon1
-workspace $ws9 output $mon1
-workspace $ws10 output $mon1
-
 # 1 web
 assign [class="^qutebrowser$"] $ws1
 
@@ -43,9 +39,7 @@ assign [class="^qutebrowser$"] $ws1
 
 # 3 vim
 
-# 4 game / video
-assign [class="^mpv$"] $ws4
-
+# 4 game
 assign [class="^csgo_linux64$"] $ws4
 assign [class="^dota2$"] $ws4
 assign [class="^RocketLeague$"] $ws4
@@ -55,7 +49,6 @@ assign [title="^SpaceChem$"] $ws4
 assign [class="^metro$"] $ws4
 assign [class="^Lightning.bin.x86_64$"] $ws4
 
-for_window [class="^mpv$"] fullscreen
 for_window [class="^dota2$"] fullscreen
 for_window [class="^RocketLeague$"] fullscreen
 
@@ -71,15 +64,27 @@ for_window [class="^Steam$" title="Чат$"] floating enable
 for_window [class="^Steam$" title="^Настройки$"] floating enable
 for_window [class="^Steam$" title="^Steam Guard"] floating enable
 
-# 8 documents / transfer
-assign [class="^qBittorrent$"] $ws8
+# 8 documents
 assign [class="^Zathura$"] $ws8
 assign [title=".pdf$"] $ws8
 
 # 9 cmus
 
-# 10 voice
+# 10 misc
+
+# 11 transfer
+assign [class="^qBittorrent$"] $ws8
+
+# 12 voice
 assign [class="^discord$"] $ws10
+
+# 13 documents
+
+# 14 video
+assign [class="^mpv$"] $ws4
+for_window [class="^mpv$"] fullscreen
+
+# 15 misc
 
 ### OPTIONS
 
@@ -143,6 +148,11 @@ bindcode $mod+25 workspace $ws7
 bindcode $mod+26 workspace $ws8
 bindcode $mod+27 workspace $ws9
 bindcode $mod+28 workspace $ws10
+bindsym $mod+1 workspace $ws11
+bindsym $mod+2 workspace $ws12
+bindsym $mod+3 workspace $ws13
+bindsym $mod+4 workspace $ws14
+bindsym $mod+5 workspace $ws15
 
 # move focused container to workspace
 bindcode $mod+Shift+38 move container to workspace $ws1
@@ -155,6 +165,11 @@ bindcode $mod+Shift+25 move container to workspace $ws7
 bindcode $mod+Shift+26 move container to workspace $ws8
 bindcode $mod+Shift+27 move container to workspace $ws9
 bindcode $mod+Shift+28 move container to workspace $ws10
+bindsym $mod+Shift+1 move container to workspace $ws11
+bindsym $mod+Shift+2 move container to workspace $ws12
+bindsym $mod+Shift+3 move container to workspace $ws13
+bindsym $mod+Shift+4 move container to workspace $ws14
+bindsym $mod+Shift+5 move container to workspace $ws15
 
 # next / prev workspace
 bindsym $mod+Tab workspace next

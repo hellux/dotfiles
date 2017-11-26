@@ -30,11 +30,31 @@ set $transparent #00000000
 # monitors
 set $mon0 "DVI-D-0"
 set $mon1 "HDMI-A-1"
+set $mon2 "HDMI-A-0"
 
 # commands
 set $terminal "exec termite"
 set $launcher "exec --no-startup-id rofi -show run"
 set $toggle_audio "exec sh ~/scripts/toggle_audio.sh 1 2"
+
+### WORKSPACE ASSIGNMENTS
+
+# Monitor
+workspace $ws1 output $mon0
+workspace $ws2 output $mon0
+workspace $ws3 output $mon0
+workspace $ws4 output $mon0
+workspace $ws5 output $mon0
+workspace $ws6 output $mon1
+workspace $ws7 output $mon1
+workspace $ws8 output $mon1
+workspace $ws9 output $mon1
+workspace $ws10 output $mon1
+workspace $ws11 output $mon2
+workspace $ws12 output $mon2
+workspace $ws13 output $mon2
+workspace $ws14 output $mon2
+workspace $ws15 output $mon2
 
 ### OPTIONS
 
