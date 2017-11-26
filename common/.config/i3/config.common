@@ -8,14 +8,14 @@ set $ws4 "4 "
 set $ws5 "5 "
 
 set $ws6 "6 "
-set $ws7 "7 "
+set $ws7 "7 "
 set $ws8 "8 "
 set $ws9 "9 "
 set $ws10 "10 "
 
-set $ws11 "11 "
-set $ws12 "12 "
-set $ws13 "13 "
+set $ws11 "11 "
+set $ws12 "12 "
+set $ws13 "13 "
 set $ws14 "14 "
 set $ws15 "15 "
 
@@ -56,13 +56,8 @@ for_window [class="^RocketLeague$"] fullscreen
 
 # 6 mutt 
 
-# 7 steam
-assign [class="^Steam$"] $ws7
-for_window [class="^Steam$" title="^Друзья$"] floating enable
-for_window [class="^Steam$" title="Новости"] floating enable
-for_window [class="^Steam$" title="Чат$"] floating enable
-for_window [class="^Steam$" title="^Настройки$"] floating enable
-for_window [class="^Steam$" title="^Steam Guard"] floating enable
+# 7 transfer
+assign [class="^qBittorrent$"] $ws7
 
 # 8 documents
 assign [class="^Zathura$"] $ws8
@@ -72,16 +67,21 @@ assign [title=".pdf$"] $ws8
 
 # 10 misc
 
-# 11 transfer
-assign [class="^qBittorrent$"] $ws8
+# 11 voice
+assign [class="^discord$"] $ws11
 
 # 12 voice
-assign [class="^discord$"] $ws10
+assign [class="^Steam$"] $ws12
+for_window [class="^Steam$" title="^Друзья$"] floating enable
+for_window [class="^Steam$" title="Новости"] floating enable
+for_window [class="^Steam$" title="Чат$"] floating enable
+for_window [class="^Steam$" title="^Настройки$"] floating enable
+for_window [class="^Steam$" title="^Steam Guard"] floating enable
 
-# 13 documents
+# 13 irc
 
 # 14 video
-assign [class="^mpv$"] $ws4
+assign [class="^mpv$"] $ws14
 for_window [class="^mpv$"] fullscreen
 
 # 15 misc
