@@ -9,3 +9,6 @@ alias d='dirs -pv'
 
 # prefix
 alias wifi='sudo netctl stop-all && sudo netctl start'
+
+# substitute
+alias maxima='rlwrap -pyellow maxima'
