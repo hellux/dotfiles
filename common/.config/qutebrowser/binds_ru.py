@@ -19,6 +19,7 @@ def bind_russian(config):
     config.bind('Щ', 'reload -f')
     config.bind('р', 'tab-close')
     config.bind('Р', 'tab-close -o')
+    config.bind('а', 'undo');
 
 #addresses
     config.bind('ь', 'quickmark-save')
@@ -27,6 +28,7 @@ def bind_russian(config):
     config.bind('ы', 'set-cmd-text -s :open')
     config.bind('Ы', 'set-cmd-text -s :open -t')
     config.bind('гы', 'set-cmd-text -s :open {url:pretty}')
+    config.bind('гЫ', 'set-cmd-text -s :open -t {url:pretty}')
 
     config.bind('<Ctrl-и>', 'prompt-open-download')
     config.bind('д', 'prompt-accept no')
