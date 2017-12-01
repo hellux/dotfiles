@@ -1,3 +1,4 @@
+"top row
 map к p
 map К P
 map <c-к> <c-p>
@@ -22,6 +23,8 @@ map <c-з> <c-l>
 map х ,
 map Х ;
 map <c-х> <c-,>
+
+"home row
 map ф a
 map Ф A
 map <c-ф> <c-a>
@@ -55,6 +58,8 @@ map <c-ж> <c-s>
 map э -
 map Э _
 map <c-э> <c-->
+
+"bottom row
 map я .
 map Я :
 map <c-я> <c-.>
@@ -83,6 +88,8 @@ map ю v
 map Ю V
 map <c-ю> <c-v>
 
-map рр dd
-map шш cc
+"double keys
 map ее yy
+map гг gg
+map шш cc
+map рр dd
