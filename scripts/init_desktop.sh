@@ -1,3 +1,4 @@
+#!/bin/sh
 sh ~/scripts/init_common.sh
 sh ~/scripts/monitor_desktop.sh
 

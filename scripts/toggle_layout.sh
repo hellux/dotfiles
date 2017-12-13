@@ -8,8 +8,8 @@ alt_layout=$3
 alt_variant=$4
 
 query=$(setxkbmap -query)
-_=$(echo $query | grep $layout &&
-    echo $query | grep $variant)
+_=$(echo "$query" | grep "$layout" &&
+    echo "$query" | grep "$variant")
 toggle=$?
 
 if [ $toggle -eq 0 ]
@@ -18,6 +18,6 @@ then
     variant=$alt_variant
 fi
 
-setxkbmap -verbose 0 $layout -variant $variant
+setxkbmap -verbose 0 "$layout" -variant "$variant"
 
 exit 0

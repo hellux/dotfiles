@@ -1,10 +1,11 @@
+#!/bin/sh
 # Toggle between two audio outputs (eg. speakers, headset) pulseaudio.
 # usage: ./toggle_audio.sh output1 output2
 
 output1=$1
 output2=$2
 
-_=$(pacmd list-sinks | grep "\* index: $output2")
+_=$(pacmd list-sinks | grep "\\* index: $output2")
 toggle=$?
 
 if [ $toggle -eq 0 ]; then
@@ -13,9 +14,9 @@ else
     output=$output2
 fi
 
-pacmd set-default-sink $output
+pacmd set-default-sink "$output"
 
 for sink_input in $(pacmd list-sink-inputs | awk '$1 == "index:" {print $2}')
 do
-    pacmd move-sink-input $sink_input $output
+    pacmd move-sink-input "$sink_input" "$output"
 done
