@@ -1,0 +1,17 @@
+set download-path=~/tmp/
+
+set editor-command=termite -e "vim %s"
+
+set input-autohide=true
+
+set webgl=false
+
+set default-font=Source Code Pro
+set monospace-font=Source Code Pro
+set minimum-font-size=20
+set font-size=22
+
+set monospace-font-size=20
+
+nmap e ;o
+nmap E ;t
