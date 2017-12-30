@@ -1,8 +1,6 @@
 #!/bin/bash
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
-setxkbmap se -variant dvorak -option caps:escape
-
 mkdir -p /tmp/xdg /tmp/download
 
 # merge common and local i3 config

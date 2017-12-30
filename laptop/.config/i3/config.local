@@ -9,7 +9,7 @@ set $gn_text "#bbbbbb"
 set $gn_sep "#555555"
 
 # commands
-set $terminal exec urxvt
+set $terminal exec st
 set $lock exec ~/.config/i3/flock/locK
 set $launcher exec --no-startup-id dmenu_run -lh 30 -fn \
 'Source Code Pro:size=12' -nb '#222222' -nf '#bbbbbb' -sb '#285577' \

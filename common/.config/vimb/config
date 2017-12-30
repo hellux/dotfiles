@@ -5,7 +5,7 @@ set editor-command=termite -e "vim %s"
 set input-autohide=true
 set status-bar=false
 
-set hint-keys="aoeuidhtns"
+set hint-keys=aoeuidhtns
 
 set javascript-can-access-clipboard=false
 set javascript-can-open-windows-automatically=false
