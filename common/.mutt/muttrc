@@ -43,6 +43,10 @@ set smtp_authenticators = "login"
 set message_cachedir = "~/.mutt/message_cache"
 set header_cache = "~/.mutt/header_cache"
 
+# Settings
+# speed up reading hcache'd maildirs
+folder-hook . 'set read_inc=1000'
+
 # Appearance
 auto_view text/html
 
