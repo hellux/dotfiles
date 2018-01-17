@@ -4,6 +4,7 @@ bind_russian(config)
 
 c.content.geolocation = False
 c.content.headers.accept_language = 'ru-RU,ru'
+c.content.javascript.enabled = False
 
 c.downloads.remove_finished = 0
 
@@ -30,7 +31,7 @@ c.fonts.web.size.minimum_logical = content_size
 c.hints.chars = 'aoeuhtnsåäöpgcrl.qjkmwvz'
 
 c.tabs.favicons.show = False
-c.tabs.width.indicator = 0
+c.tabs.indicator.width = 0
 
 config.bind('e', 'hint')
 config.bind('E', 'hint all tab')
