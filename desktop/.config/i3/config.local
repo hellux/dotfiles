@@ -94,7 +94,7 @@ bindcode $mod+Shift+57 $toggle_audio
 
 # Start i3bar to display a workspace bar
 bar {
-    status_command i3blocks
+    status_command i3status
     i3bar_command i3bar -t
     position top
     strip_workspace_numbers yes
