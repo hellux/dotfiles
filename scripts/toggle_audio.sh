@@ -5,10 +5,9 @@
 output1=$1
 output2=$2
 
-_=$(pacmd list-sinks | grep "\\* index: $output2")
-toggle=$?
+pacmd list-sinks | grep "\\* index: $output2" > /dev/null
 
-if [ $toggle -eq 0 ]; then
+if [ $? -eq 0 ]; then
     output=$output1
 else
     output=$output2
