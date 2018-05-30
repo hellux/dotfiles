@@ -19,3 +19,6 @@ set wildmenu
 set laststatus=2
 
 set spelllang=en,sv,ru
+
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
