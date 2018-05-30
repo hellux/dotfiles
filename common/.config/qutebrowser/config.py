@@ -30,7 +30,7 @@ c.fonts.web.size.minimum_logical = content_size
 
 c.hints.chars = 'aoeuhtnsåäöpgcrl.qjkmwvz'
 
-c.tabs.favicons.show = False
+c.tabs.favicons.show = 'never'
 c.tabs.indicator.width = 0
 
 config.bind('e', 'hint')
