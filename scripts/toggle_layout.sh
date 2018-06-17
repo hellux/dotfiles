@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # Toggle keyboard layout in Xorg.
 # usage: ./toggle_layout.sh LAYOUT VARIANT ALT_LAYOUT ALT_VARIANT
 
@@ -12,8 +12,7 @@ _=$(echo "$query" | grep "$layout" &&
     echo "$query" | grep "$variant")
 toggle=$?
 
-if [ $toggle -eq 0 ]
-then
+if [ $toggle -eq 0 ]; then
     layout=$alt_layout
     variant=$alt_variant
 fi
