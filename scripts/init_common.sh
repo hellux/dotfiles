@@ -1,5 +1,8 @@
-#!/bin/bash
-[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+#!/bin/sh
+
+if [ -f ~/.Xresources ]; then
+    xrdb -merge -I$HOME ~/.Xresources
+fi
 
 mkdir -p /tmp/xdg /tmp/download
 
