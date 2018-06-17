@@ -133,8 +133,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	TAGKEYS(                        XK_a,                      0)
 	TAGKEYS(                        XK_o,                      1)
-	TAGKEYS(                        XK_u,                      2)
-	TAGKEYS(                        XK_e,                      3)
+	TAGKEYS(                        XK_e,                      2)
+	TAGKEYS(                        XK_u,                      3)
 	TAGKEYS(                        XK_i,                      4)
 	TAGKEYS(                        XK_aring,                  5)
 	TAGKEYS(                        XK_adiaeresis,             6)
