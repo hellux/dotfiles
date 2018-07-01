@@ -34,10 +34,10 @@
 #define FADED_ORANGE    "#AF3A03"
 
 static const char *fonts[] = {
-	"monospace:size=10",
-    "Font Awesome:size=10"
+	"monospace:size=12",
+    "Font Awesome:size=12"
 };
-static const char dmenufont[]       = "monospace:size=10";
+static const char dmenufont[]       = "monospace:size=12";
 static const char normbordercolor[] = DARK1;
 static const char normbgcolor[]     = LIGHT0;
 static const char normfgcolor[]     = DARK0;
@@ -104,44 +104,44 @@ static const char *kbdcmd[]  = { "sh", "/home/noah/scripts/toggle_layout.sh",
                                  "se", "dvorak", "ru", "", NULL };
 
 static Key keys[] = {
-	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_g,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = browsercmd } },
-	{ MODKEY,                       XK_F10,    spawn,          {.v = kbdcmd } },
+	/* modifier          key  function        argument */
+	{ MODKEY,            30,  spawn,          {.v = dmenucmd } },
+	{ MODKEY|ShiftMask,  36,  spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,  29,  spawn,          {.v = browsercmd } },
+	{ MODKEY,            75,  spawn,          {.v = kbdcmd } },
 
-	{ MODKEY,                       XK_f,      togglebar,      {0} },
-	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_D,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_z,      zoom,           {0} },
-	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY,                       XK_c,      killclient,     {0} },
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_r,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_space,  setlayout,      {0} },
-	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
-	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
-	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	TAGKEYS(                        XK_a,                      0)
-	TAGKEYS(                        XK_o,                      1)
-	TAGKEYS(                        XK_e,                      2)
-	TAGKEYS(                        XK_u,                      3)
-	TAGKEYS(                        XK_i,                      4)
-	TAGKEYS(                        XK_aring,                  5)
-	TAGKEYS(                        XK_adiaeresis,             6)
-	TAGKEYS(                        XK_odiaeresis,             7)
-	TAGKEYS(                        XK_p,                      8)
-	TAGKEYS(                        XK_y,                      9)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY,            29,  togglebar,      {0} },
+	{ MODKEY,            54,  focusstack,     {.i = +1 } },
+	{ MODKEY,            55,  focusstack,     {.i = -1 } },
+	{ MODKEY|ShiftMask,  43,  incnmaster,     {.i = +1 } },
+	{ MODKEY,            43,  incnmaster,     {.i = -1 } },
+	{ MODKEY,            44,  setmfact,       {.f = -0.05} },
+	{ MODKEY,            33,  setmfact,       {.f = +0.05} },
+	{ MODKEY,            61,  zoom,           {0} },
+	{ MODKEY,            23,  view,           {0} },
+	{ MODKEY,            31,  killclient,     {0} },
+	{ MODKEY,            45,  setlayout,      {.v = &layouts[0]} },
+	{ MODKEY,            32,  setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,            58,  setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,            65,  setlayout,      {0} },
+	{ MODKEY|ShiftMask,  65,  togglefloating, {0} },
+	{ MODKEY,            19,  view,           {.ui = ~0 } },
+	{ MODKEY|ShiftMask,  19,  tag,            {.ui = ~0 } },
+	{ MODKEY,            34,  focusmon,       {.i = -1 } },
+	{ MODKEY,            52,  focusmon,       {.i = +1 } },
+	{ MODKEY|ShiftMask,  34,  tagmon,         {.i = -1 } },
+	{ MODKEY|ShiftMask,  52,  tagmon,         {.i = +1 } },
+	{ MODKEY|ShiftMask,  53,  quit,           {0} },
+	TAGKEYS(             38,                  0)
+	TAGKEYS(             39,                  1)
+	TAGKEYS(             40,                  2)
+	TAGKEYS(             41,                  3)
+	TAGKEYS(             42,                  4)
+	TAGKEYS(             24,                  5)
+	TAGKEYS(             25,                  6)
+	TAGKEYS(             26,                  7)
+	TAGKEYS(             27,                  8)
+	TAGKEYS(             28,                  9)
 };
 
 /* button definitions */
