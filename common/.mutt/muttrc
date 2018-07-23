@@ -1,7 +1,7 @@
-# Credentials
+# credentials
 source "~/.mutt/user"
 
-# Folder names
+# folder names
 set my_drafts = "Drafts"
 set my_drafts_noquote = "Drafts"
 set my_sent = "Sent<quote-char><space>Items"
@@ -39,18 +39,27 @@ set smtp_url = "smtp://$my_username@$my_domain@$my_server:$my_smtp_port/"
 set ssl_force_tls = yes
 set smtp_authenticators = "login"
 
-# File storage
+# file storage
 set message_cachedir = "~/.mutt/message_cache"
 set header_cache = "~/.mutt/header_cache"
 
-# Settings
+# settings
 # speed up reading hcache'd maildirs
 folder-hook . 'set read_inc=1000'
 
-# Appearance
+# appearance
+ignore *
+unignore From:
+unignore To:
+unignore Reply-To:
+unignore Subject:
+unignore Date:
+unignore CC:
+unignore BCC:
+unignore User-Agent:
 auto_view text/html
 
-# Binds
+# binds
 
 bind generic,index,pager \Cf       next-page
 bind generic,index,pager \Cb       previous-page
