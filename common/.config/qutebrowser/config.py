@@ -35,5 +35,5 @@ c.tabs.indicator.width = 0
 
 config.bind('e', 'hint')
 config.bind('E', 'hint all tab')
-config.bind('q', 'spawn ~/scripts/stream.sh {url}')
-config.bind('Q', 'hint links spawn ~/scripts/stream.sh {hint-url}')
+config.bind('q', 'spawn ~/scripts/play-video.sh {url}')
+config.bind('Q', 'hint links spawn ~/scripts/play-video.sh {hint-url}')
