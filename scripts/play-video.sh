@@ -1,7 +1,7 @@
 #!/bin/env sh
-fifo=$HOME/.mp_pipe
+fifo=$XDG_RUNTIME_DIR/mp_pipe
 [ ! -e $fifo ] && mkfifo $fifo
-if ps -ao comm | grep -q mpv;
+if ps -eo comm | grep -q '^mpv$';
 then echo loadfile "$@" append-play > $fifo
-else mpv --input-file=$fifo "$@" &
+else mpv --ytdl-format="bestvideo+bestaudio" --input-file=$fifo "$@" &
 fi
