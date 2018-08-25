@@ -9,4 +9,7 @@ while true; do
 	sleep 1s
 done &
 
+# disable blanking
+xset -dpms s off
+
 exec dwm

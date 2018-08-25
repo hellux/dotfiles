@@ -9,5 +9,5 @@ echo -e '  \e[0;34m/_\x27        `_\\\  \e[1;30m|  \e[1;34m\\l' >> issue
 echo -e '  \e[0m' >> issue
 
 cp issue /etc/issue
-cat /etc/issue
+cat issue
 rm issue

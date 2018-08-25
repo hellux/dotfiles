@@ -1,5 +1,5 @@
 #include ".Xresources.d/xft"
-Xft.dpi: 180
+Xft.dpi: 150
 #include ".Xresources.d/gruvbox"
 
 *TkTheme: Arc-Darker

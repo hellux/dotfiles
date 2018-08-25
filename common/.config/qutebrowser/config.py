@@ -8,8 +8,8 @@ c.content.javascript.enabled = False
 
 c.downloads.remove_finished = 0
 
-ui_size = 12
-content_size = 18
+ui_size = 13
+content_size = 20
 c.fonts.completion.category = 'bold %dpt monospace' % ui_size
 c.fonts.completion.entry = '%dpt monospace' % ui_size
 c.fonts.debug_console = '%dpt monospace' % ui_size
@@ -19,7 +19,7 @@ c.fonts.keyhint = '%dpt monospace' % ui_size
 c.fonts.messages.error = '%dpt monospace' % ui_size
 c.fonts.messages.info = '%dpt monospace' % ui_size
 c.fonts.messages.warning = '%dpt monospace' % ui_size
-c.fonts.monospace = 'Source Code Pro'
+c.fonts.monospace = 'Monospace'
 c.fonts.prompts = '%dpt sans-serif' % ui_size
 c.fonts.statusbar = '%dpt monospace' % ui_size
 c.fonts.tabs = '%dpt monospace' % ui_size

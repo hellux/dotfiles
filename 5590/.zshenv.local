@@ -1,0 +1,2 @@
+alias reboot='sudo /sbin/reboot'
+alias poweroff='sudo /sbin/poweroff'

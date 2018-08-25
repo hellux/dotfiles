@@ -28,7 +28,7 @@ TMP4="$URG1 " # 66-
 
 NET_WLAN=$(ifconfig wlp2s0 | grep inet | xargs | cut -d' ' -f2)
 NET_ETH=$(ifconfig enp0s31f6 | grep inet | xargs | cut -d' ' -f2)
-BAT="$(acpi -b | awk '{ print $4 }' | rev | cut -c 3- | rev)"
+BAT=$(acpi | awk -v RS="%" -v FS=" " '{print $(NF);exit}')
 VOL=$(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/' | rev \
     | cut -c 2- | rev)
 TMP="$(expr $(cat /sys/class/thermal/thermal_zone6/temp) / 1000)"
