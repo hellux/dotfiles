@@ -1,4 +1,4 @@
-source ~/.zshenv.local
+[ -r ~/.zshenv.local ] && source ~/.zshenv.local
 
 export EDITOR=vim
 export VISUAL=vim

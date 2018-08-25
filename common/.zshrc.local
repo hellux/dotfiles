@@ -7,7 +7,11 @@ zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'l:|=* r:|=*'
 
 # prompt color
 if [[ "$HOST" = *"5590"* ]]; then
-    zstyle ':prompt:grml:*:items:user' pre $'%{\e[1;35m%}'
+    zstyle ':prompt:grml:*:items:user' pre $'%{\e[1;35m%}' # magenta
+elif [[ "$HOST" = *"dev"* ]]; then
+    zstyle ':prompt:grml:*:items:user' pre $'%{\e[1;31m%}' # red
+else
+    zstyle ':prompt:grml:*:items:user' pre $'%{\e[1;34m%}' # blue
 fi
 
 # fzf fuzzy search
