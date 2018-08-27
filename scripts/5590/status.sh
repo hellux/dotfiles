@@ -1,12 +1,18 @@
 #!/bin/sh
 # font icons from font awesome 4.7.0
 
+WLAN="wlp2s0"
+ETH="enp0s31f6"
+THRM_DEV="coretemp-isa-0000"
+THRM_DEV_SENS="2"
+
+
 # codes for colors defined in dwm config header
-NRM0="\x01"
-SEL0="\x02"
-NRM1="\x03"
-URG0="\x04"
-URG1="\x05"
+NRM0='\01'
+SEL0='\02'
+NRM1='\03'
+URG0='\04'
+URG1='\05'
 
 NETE="$NRM0 " # ethernet
 NETW="$NRM0 " # wireless
@@ -26,12 +32,13 @@ TMP2="$NRM1 " # 45-55
 TMP3="$URG0 " # 56-65
 TMP4="$URG1 " # 66-
 
-NET_WLAN=$(ifconfig wlp2s0 | grep inet | xargs | cut -d' ' -f2)
-NET_ETH=$(ifconfig enp0s31f6 | grep inet | xargs | cut -d' ' -f2)
+NET_WLAN=$(ifconfig $WLAN | grep inet | xargs | cut -d' ' -f2)
+NET_ETH=$(ifconfig $ETH | grep inet | xargs | cut -d' ' -f2)
 BAT=$(acpi | awk -v RS="%" -v FS=" " '{print $(NF);exit}')
 VOL=$(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/' | rev \
     | cut -c 2- | rev)
-TMP="$(expr $(cat /sys/class/thermal/thermal_zone6/temp) / 1000)"
+TMP=$(sensors -u $THRM_DEV | \
+    sed -n 's/\.000//;s/  temp'$THRM_DEV_SENS'_input: */\1/p')
 DAT=$(date +"%a %d %b %Y")
 TIM=$(date +"%H:%M")
 
@@ -66,10 +73,10 @@ else
     NETSTR="${NETOFF}disc"
 fi
 
-BATSTR="$BATPRE$BAT%"
-VOLSTR="$VOLPRE$VOL%"
+BATSTR="$BATPRE$BAT%%"
+VOLSTR="$VOLPRE$VOL%%"
 TMPSTR="$TMPPRE$TMP°C"
 DATSTR="$NRM0 $DAT"
 TIMSTR="$NRM1 $TIM"
 
-echo -e "$NETSTR$BATSTR$VOLSTR$TMPSTR$DATSTR$TIMSTR"
+printf "$NETSTR$BATSTR$VOLSTR$TMPSTR$DATSTR$TIMSTR"
