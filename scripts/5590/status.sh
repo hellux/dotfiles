@@ -4,8 +4,7 @@
 WLAN="wlp2s0"
 ETH="enp0s31f6"
 THRM_DEV="coretemp-isa-0000"
-THRM_DEV_SENS="2"
-
+THRM_DEV_SENS="1"
 
 # codes for colors defined in dwm config header
 NRM0='\01'
@@ -38,7 +37,7 @@ BAT=$(acpi | awk -v RS="%" -v FS=" " '{print $(NF);exit}')
 VOL=$(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/' | rev \
     | cut -c 2- | rev)
 TMP=$(sensors -u $THRM_DEV | \
-    sed -n 's/\.000//;s/  temp'$THRM_DEV_SENS'_input: */\1/p')
+    sed -n 's/\.000//;s/  temp'$THRM_DEV_SENS'_input: //p')
 DAT=$(date +"%a %d %b %Y")
 TIM=$(date +"%H:%M")
 
