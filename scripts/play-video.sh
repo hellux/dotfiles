@@ -1,14 +1,36 @@
 #!/bin/env sh
+
 fifo=$XDG_RUNTIME_DIR/mp_pipe
 [ ! -e $fifo ] && mkfifo $fifo
 
-if youtube-dl -q -s -f "bestvideo+bestaudio" $@;
-then format="bestvideo+bestaudio"
-else format="best"
-fi
+MAGIC="--title=queue"
 
-if ps -eo comm | grep -q '^mpv$'; then
-    echo loadfile "$@" append-play ytdl-format=$format > $fifo
-else
-    mpv --ytdl-format=$format --really-quiet --input-file=$fifo $@
-fi
+args="--really-quiet --input-file=$fifo"
+queue=false
+while getopts q flag; do
+    case "$flag" in
+        q) queue=true;;
+        [?]) die "invalid flag -- $OPTARG"
+    esac
+done
+shift $((OPTIND-1))
+
+[ "$queue" = "true" ] && args="$MAGIC $args"
+
+urls=""
+for url in $*; do
+    urls="$urls $(youtube-dl -s -j "$*" | jq -M '.webpage_url' | tr -d \")"
+done
+
+for url in $urls; do
+    if youtube-dl -q -s -f "bestvideo+bestaudio" "$url";
+    then format="bestvideo[height<=?1080]+bestaudio"
+    else format="best"
+    fi
+
+    if [ "$queue" = "true" ] && ps -eo command | grep -q "^mpv $MAGIC";
+    then echo loadfile "ytdl://$url" append-play ytdl-format=$format > $fifo
+    else mpv $args --ytdl-format=$format "ytdl://$url" &
+    fi
+done
+
