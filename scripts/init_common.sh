@@ -1,5 +1,7 @@
 #!/bin/sh
 
+PATH="$PATH:/home/noah/.local/bin"
+
 if [ -f ~/.Xresources ]; then
     xrdb -merge -I$HOME ~/.Xresources
 fi
