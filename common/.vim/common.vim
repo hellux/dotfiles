@@ -10,6 +10,7 @@ set tabstop=4
 set softtabstop=4
 
 syntax on
+set nohlsearch
 set termguicolors
 set scrolloff=5
 set relativenumber
