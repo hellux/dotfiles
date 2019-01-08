@@ -1,0 +1,33 @@
+keymap Q NOTHING
+
+keymap F1 HELP
+keymap C-h HELP
+keymap C-s OPTIONS
+
+keymap o GOTO
+keymap O TAB_GOTO
+
+keymap C-e UP
+keymap C-y DOWN
+keymap C-d NEXT_PAGE
+keymap C-u PREV_PAGE
+keymap { PREV_LINK
+keymap } NEXT_LINK
+keymap C-o UNDO
+keymap C-i REDO
+
+keymap SPC SUBMIT
+keymap SPC GOTO_LINK
+keymap t TAB_LINK
+keymap e LIST_MENU
+
+keymap r RELOAD
+keymap H PREV
+keymap L NEXT
+
+keymap b VIEW_BOOKMARK
+keymap m ADD_BOOKMARK
+
+keymap J NEXT_TAB
+keymap K PREV_TAB
+keymap d CLOSE_TAB
