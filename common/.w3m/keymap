@@ -1,6 +1,59 @@
-keymap Q NOTHING
+keymap ^[[1~ NOTHING
+keymap ^[[2~ NOTHING
+keymap ^[[3~ NOTHING
+keymap ^[[4~ NOTHING
+keymap ^[[5~ NOTHING
+keymap ^[[6~ NOTHING
+keymap ^[[Z NOTHING
+keymap ^[[E NOTHING
+keymap ^[[28~ NOTHING
+keymap ^[[L NOTHING
 
-keymap F1 HELP
+keymap ESC-C-m NOTHING
+keymap ESC-C-j NOTHING
+keymap ESC-v NOTHING
+keymap ESC-< NOTHING
+keymap ESC-> NOTHING
+keymap ESC-I NOTHING
+keymap ESC-t NOTHING
+keymap ESC-b NOTHING
+keymap ESC-a NOTHING
+keymap ESC-W NOTHING
+keymap ESC-w NOTHING
+keymap ESC-l NOTHING
+keymap ESC-u NOTHING
+keymap ESC-k NOTHING
+keymap ESC-o NOTHING
+keymap ESC-c NOTHING
+keymap ESC-n NOTHING
+keymap ESC-p NOTHING
+keymap C-@ NOTHING
+keymap C-v NOTHING
+keymap C-b NOTHING
+keymap C-f NOTHING
+keymap C-m NOTHING
+keymap C-j NOTHING
+keymap C-t NOTHING
+keymap C-w NOTHING
+keymap C-q NOTHING
+keymap C-r NOTHING
+
+keymap @ NOTHING
+keymap # NOTHING
+keymap U NOTHING
+keymap V NOTHING
+keymap R NOTHING
+keymap Q NOTHING
+keymap F NOTHING
+keymap { NOTHING
+keymap } NOTHING
+keymap + NOTHING
+keymap - NOTHING
+keymap RIGHT NOTHING
+keymap LEFT NOTHING
+keymap DOWN NOTHING
+keymap UP NOTHING
+
 keymap C-h HELP
 keymap C-s OPTIONS
 
@@ -11,10 +64,13 @@ keymap C-e UP
 keymap C-y DOWN
 keymap C-d NEXT_PAGE
 keymap C-u PREV_PAGE
-keymap { PREV_LINK
 keymap } NEXT_LINK
+keymap { PREV_LINK
+keymap C-n NEXT_LINK
+keymap C-p PREV_LINK
 keymap C-o UNDO
 keymap C-i REDO
+keymap p PEEK_LINK
 
 keymap SPC SUBMIT
 keymap SPC GOTO_LINK
