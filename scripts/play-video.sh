@@ -5,7 +5,7 @@ fifo=$XDG_RUNTIME_DIR/mp_pipe
 
 MAGIC="--title=queue"
 
-args="--really-quiet --input-file=$fifo"
+args="--keep-open=yes --really-quiet --input-file=$fifo"
 queue=false
 while getopts q flag; do
     case "$flag" in
