@@ -15,7 +15,7 @@ else
 fi
 
 # fzf fuzzy search
-if [ -f /usr/share/fzf ]; then # arch
+if [ -d /usr/share/fzf ]; then # arch
     source /usr/share/fzf/key-bindings.zsh
     source /usr/share/fzf/completion.zsh
 elif [ -f /usr/share/zsh/site-contrib/fzf.zsh ];then  # gentoo
