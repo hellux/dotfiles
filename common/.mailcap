@@ -1,5 +1,5 @@
-text/html; links %s; nametemplate=%s.html
-text/html; links -dump %s; nametemplate=%s.html; copiousoutput
+text/html; w3m %s; nametemplate=%s.html
+text/html; w3m -dump -o display_link_number=1 %s; nametemplate=%s.html; copiousoutput
 image/*; feh %s
 image/gif; mpv '%s' --loop=inf
 video/*; mpv '%s'
