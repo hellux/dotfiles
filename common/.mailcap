@@ -3,3 +3,4 @@ text/html; links -dump %s; nametemplate=%s.html; copiousoutput
 image/*; feh %s
 image/gif; mpv '%s' --loop=inf
 video/*; mpv '%s'
+application/pdf; zathura '%s'
