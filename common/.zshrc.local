@@ -25,7 +25,7 @@ fi
 
 # welcome fortune
 command fortune -sa | \
-    fmt -50 -s | \
+    sed 's/\n/ /g' | \
     $(shuf -n 1 -e cowsay cowthink) \
     -$(shuf -n 1 -e b d g p s t w y) -f \
      $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n
