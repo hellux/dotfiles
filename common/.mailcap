@@ -4,3 +4,4 @@ image/*; feh %s
 image/svg+xml; feh --conversion-timeout 5 %s
 image/gif; mpv '%s' --loop=inf
 video/*; mpv '%s'
+application/pdf; zathura '%s'
