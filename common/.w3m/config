@@ -68,7 +68,7 @@ mailto_options 1
 mailer 
 extbrowser /usr/bin/xdg-open
 extbrowser2 ~/scripts/play-video.sh -q
-extbrowser3 ~/scripts/play-video
+extbrowser3 ~/scripts/play-video.sh
 extbrowser4 
 extbrowser5 
 extbrowser6 
