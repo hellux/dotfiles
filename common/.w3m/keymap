@@ -62,6 +62,8 @@ keymap O TAB_GOTO
 
 keymap C-e UP
 keymap C-y DOWN
+keymap . LEFT
+keymap , RIGHT
 keymap C-d NEXT_PAGE
 keymap C-u PREV_PAGE
 keymap } NEXT_LINK
