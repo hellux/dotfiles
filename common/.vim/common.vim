@@ -24,3 +24,6 @@ set spelllang=en,sv,ru
 
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
+
+autocmd BufRead,BufNewFile *.tex set ft=tex
+autocmd BufRead,BufNewFile *.ts set ft=typescript
