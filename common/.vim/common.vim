@@ -24,3 +24,5 @@ set spelllang=en,sv,ru
 
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
+
+source ~/.vim/ft.vim
