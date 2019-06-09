@@ -1,2 +1,4 @@
+export COWPATH="$HOME/gr/cowsay/cows:/usr/share/cowsay-3.03/cows"
+
 alias reboot='sudo /sbin/reboot'
 alias poweroff='sudo /sbin/poweroff'

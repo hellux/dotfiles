@@ -1,6 +1,6 @@
 #!/bin/env sh
 
-fifo=$XDG_RUNTIME_DIR/mp_pipe
+fifo=~/.cache/mp_pipe
 [ ! -e $fifo ] && mkfifo $fifo
 
 MAGIC="--title=queue"

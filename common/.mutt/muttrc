@@ -1,6 +1,9 @@
 # credentials
 source "~/.mutt/user"
 
+# aliases
+source "~/.mutt/alias"
+
 # folder names
 set my_drafts = "Drafts"
 set my_drafts_noquote = "Drafts"

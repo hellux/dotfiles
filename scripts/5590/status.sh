@@ -41,7 +41,7 @@ TMP=$(sensors -u $THRM_DEV | \
 DAT=$(date +"%a %d %b %Y")
 TIM=$(date +"%H:%M")
 
-if acpi | grep -q "Charging"; then BATPRE="$BATAC"
+if acpi | grep -qE "Charging|Full"; then BATPRE="$BATAC"
 elif [ "85" -lt "$BAT" ]; then BATPRE="$BAT4"
 elif [ "65" -lt "$BAT" ]; then BATPRE="$BAT3"
 elif [ "35" -lt "$BAT" ]; then BATPRE="$BAT2"

@@ -1,2 +1,3 @@
+source ~/.mutt/alias
 source ~/.mutt/muttrc
 source ~/.mutt/gruvbox
