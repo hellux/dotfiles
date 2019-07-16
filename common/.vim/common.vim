@@ -19,6 +19,7 @@ set cursorline
 set display=lastline
 set wildmenu
 set laststatus=2
+set showcmd
 
 set spelllang=en,sv,ru
 

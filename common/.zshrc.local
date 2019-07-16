@@ -23,6 +23,12 @@ elif [ -f /usr/share/zsh/site-contrib/fzf.zsh ];then  # gentoo
     source /usr/share/zsh/site-functions/_fzf
 fi
 
+# force file completion (for badly supported commands)
+zle -C complete-file complete-word _generic
+zstyle ':completion:complete-file::::' completer _files
+bindkey '^F' complete-file
+
+
 # welcome fortune
 command fortune -sa | \
     sed 's/\n/ /g' | \
