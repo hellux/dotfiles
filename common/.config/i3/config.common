@@ -81,7 +81,7 @@ for_window [class="^Steam$" title="^Steam Guard"] floating enable
 # 13 irc
 
 # 14 video
-assign [class="^mpv$"] $ws14
+assign [class="^mpv$"] $ws4
 for_window [class="^mpv$"] fullscreen
 
 # 15 misc
