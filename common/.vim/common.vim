@@ -1,6 +1,13 @@
+set nocompatible
+filetype off
+
 filetype plugin indent on
+
+map Y y$
+
 set encoding=utf-8
 
+set ve=block
 set expandtab
 set shiftwidth=4
 set autoindent
@@ -26,4 +33,5 @@ set spelllang=en,sv,ru
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 
+source ~/.vim/whitespace.vim
 source ~/.vim/ft.vim
