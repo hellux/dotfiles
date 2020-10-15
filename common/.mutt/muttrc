@@ -81,6 +81,7 @@ bind index               za        collapse-thread
 bind index               zA        collapse-all
 bind index,pager         N         search-opposite
 bind index               <Backtab> previous-new-then-unread
+bind pager               \CR       group-reply
 
 macro index gi "<change-folder>=INBOX<enter>" "Go to Inbox"
 macro index gs "<change-folder>=$my_sent<enter>" "Go to Sent"
