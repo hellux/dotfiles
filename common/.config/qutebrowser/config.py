@@ -9,7 +9,8 @@ c.content.javascript.enabled = False
 c.downloads.remove_finished = 0
 
 ui_size = 13
-content_size = 20
+content_size = 26
+c.zoom.default = 125
 c.fonts.completion.category = 'bold %dpt monospace' % ui_size
 c.fonts.completion.entry = '%dpt monospace' % ui_size
 c.fonts.debug_console = '%dpt monospace' % ui_size

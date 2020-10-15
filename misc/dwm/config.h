@@ -100,15 +100,18 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "termite", NULL };
 static const char *browsercmd[]  = { "qutebrowser", NULL };
-static const char *kbdcmd[]  = { "sh", "/home/noah/scripts/toggle_layout.sh",
-                                 "se", "dvorak", "ru", "", NULL };
+static const char *kbdcmd1[]  = { "sh", "/home/noah/scripts/toggle_layout.sh",
+                                  "se", "dvorak", "ru", "", NULL };
+static const char *kbdcmd2[]  = { "sh", "/home/noah/scripts/toggle_layout.sh",
+                                  "se", "dvorak", "se", "", NULL };
 
 static Key keys[] = {
 	/* modifier          key  function        argument */
 	{ MODKEY,            30,  spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,  36,  spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,  29,  spawn,          {.v = browsercmd } },
-	{ MODKEY,            75,  spawn,          {.v = kbdcmd } },
+	{ MODKEY,            75,  spawn,          {.v = kbdcmd1 } },
+	{ MODKEY,            76,  spawn,          {.v = kbdcmd2 } },
 
 	{ MODKEY,            29,  togglebar,      {0} },
 	{ MODKEY,            54,  focusstack,     {.i = +1 } },

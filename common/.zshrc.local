@@ -15,12 +15,8 @@ else
 fi
 
 # fzf fuzzy search
-if [ -d /usr/share/fzf ]; then # arch
+if [ -f /usr/share/fzf/key-bindings.zsh ]; then
     source /usr/share/fzf/key-bindings.zsh
-    source /usr/share/fzf/completion.zsh
-elif [ -f /usr/share/zsh/site-contrib/fzf.zsh ];then  # gentoo
-    source /usr/share/zsh/site-contrib/fzf.zsh
-    source /usr/share/zsh/site-functions/_fzf
 fi
 
 # force file completion (for badly supported commands)

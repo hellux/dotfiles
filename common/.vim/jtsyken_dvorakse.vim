@@ -93,3 +93,6 @@ map ее yy
 map гг gg
 map шш cc
 map рр dd
+
+"misc
+vmap гч gq
