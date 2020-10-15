@@ -35,7 +35,7 @@ set $mon2 "HDMI-A-0"
 # commands
 set $terminal "exec termite"
 set $launcher "exec --no-startup-id rofi -show run"
-set $toggle_audio "exec sh ~/scripts/toggle_audio.sh 1 2"
+set $toggle_audio "exec sh ~/scripts/toggle_audio.sh"
 
 ### WORKSPACE ASSIGNMENTS
 
@@ -75,7 +75,7 @@ floating_minimum_size -1 x -1
 floating_maximum_size -1 x -1
 
 # remove titlebar
-new_window 1pixel
+new_window pixel
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.

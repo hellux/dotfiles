@@ -1,6 +1,7 @@
 tabstop 4
 indent_incr 4
 pixel_per_char 8
+pixel_per_line 14
 frame 1
 target_self 1
 open_tab_blank 0
@@ -23,6 +24,12 @@ ignore_null_img_alt 1
 view_unseenobject 1
 display_image 0
 pseudo_inlines 1
+auto_image 1
+max_load_image 4
+ext_image_viewer 1
+image_scale 100
+imgdisplay w3mimgdisplay
+image_map_list 1
 fold_line 0
 show_lnum 0
 show_srch_str 1
@@ -51,6 +58,11 @@ vi_prec_num 1
 mark_all_pages 0
 wrap_search 0
 ignorecase_search 1
+use_mouse 1
+reverse_mouse 0
+relative_wheel_scroll 0
+relative_wheel_scroll_ratio 30
+fixed_wheel_scroll_count 5
 clear_buffer 1
 decode_cte 0
 auto_uncompress 0
@@ -63,7 +75,7 @@ index_file
 mime_types ~/.mime.types, /etc/mime.types
 mailcap ~/.mailcap ~/.w3m/mailcap, /etc/w3m/mailcap
 urimethodmap ~/.w3m/urimethodmap, /etc/w3m/urimethodmap
-editor /usr/bin/vi
+editor /usr/bin/vim
 mailto_options 1
 mailer 
 extbrowser /usr/bin/xdg-open
@@ -94,6 +106,9 @@ default_url 0
 follow_redirection 10
 meta_refresh 0
 dns_order 0
+nntpserver 
+nntpmode 
+max_news 50
 use_proxy 1
 http_proxy 
 https_proxy 
