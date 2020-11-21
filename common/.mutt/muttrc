@@ -32,6 +32,9 @@ set imap_idle
 unset mark_old
 set ssl_use_sslv3 = yes
 
+set config_charset = "utf-8"
+set send_charset="utf-8"
+
 # SMTP
 set realname = $my_realname
 set from = "$my_username@$my_domain"
