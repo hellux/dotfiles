@@ -1,6 +1,6 @@
-### AUTOSTART 
+### AUTOSTART
 
-exec --no-startup-id compton -b
+exec --no-startup-id picom -b
 exec --no-startup-id dunst #desktop notification daemon, ~/.config/dunst/dunstrc
 exec --no-startup-id ~/.fehbg
 
@@ -62,12 +62,6 @@ workspace $ws15 output $mon2
 gaps inner 7
 gaps outer 0
 
-workspace $ws6 gaps inner 0
-workspace $ws7 gaps inner 0
-workspace $ws8 gaps inner 0
-workspace $ws9 gaps inner 0
-workspace $ws10 gaps inner 0
-
 force_display_urgency_hint 0 ms
 focus_on_window_activation urgent
 
@@ -102,7 +96,7 @@ bar {
 
     bindsym button4 nop
     bindsym button5 nop
-    
+
 	colors {
         background          $transparent
         statusline          $white
