@@ -28,9 +28,11 @@ for url in $urls; do
     else format="best"
     fi
 
-    if [ "$queue" = "true" ] && ps -eo command | grep -q "^mpv $MAGIC";
-    then echo loadfile "ytdl://$url" append-play ytdl-format=$format > $fifo
-    else mpv $args --ytdl-format=$format "ytdl://$url" &
+    if [ "$queue" = "true" ] && ps -eo command | grep -q "^mpv $MAGIC"; then
+        mpv_cmd="loadfile ytdl://$url append-play ytdl-format=$format"
+        echo $mpv_cmd | socat - $fifo
+    else
+        mpv $args --ytdl-format=$format "ytdl://$url" &
     fi
 done
 
