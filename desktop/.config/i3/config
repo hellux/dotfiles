@@ -229,7 +229,7 @@ set_from_resource $white       color15 #000000
 # Use custom colors for black
 set $black       #282828
 set $darkblack   #1d2021
-set $transparent #00000000
+set $transparent #00000080
 
 # monitors
 set $mon0 "DVI-D-0"
