@@ -98,8 +98,8 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "termite", NULL };
-static const char *browsercmd[]  = { "qutebrowser", NULL };
+static const char *termcmd[]  = { "alacritty", NULL };
+static const char *browsercmd[]  = { "firefox", NULL };
 static const char *kbdcmd1[]  = { "sh", "/home/noah/scripts/toggle_layout.sh",
                                   "se", "dvorak", "ru", "", NULL };
 static const char *kbdcmd2[]  = { "sh", "/home/noah/scripts/toggle_layout.sh",
