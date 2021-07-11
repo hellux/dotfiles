@@ -1,6 +1,6 @@
 set -u
-cd /usr/src/linux
-make all
+cd /usr/src/linux || exit
+make -j8 all
 make modules_install
 mount /boot
 make install
