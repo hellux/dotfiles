@@ -4,4 +4,3 @@ sh ~/scripts/monitor_desktop.sh
 
 numlockx
 sudo cpupower frequency-set -g performance
-redshift &
