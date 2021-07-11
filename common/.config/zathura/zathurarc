@@ -1,5 +1,5 @@
 map e follow
 
 set font "Monospace 14"
-set zoom-min 50
+set zoom-min 5
 set zoom-max 500
