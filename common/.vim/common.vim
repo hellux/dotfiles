@@ -28,10 +28,5 @@ set wildmenu
 set laststatus=2
 set showcmd
 
-set spelllang=en,sv,ru
-
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview
-
 source ~/.vim/whitespace.vim
 source ~/.vim/ft.vim
