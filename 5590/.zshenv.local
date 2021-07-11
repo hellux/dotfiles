@@ -3,3 +3,5 @@ export COWPATH="$HOME/gr/cowsay/cows:$(echo /usr/share/cowsay-*/cows)"
 alias reboot='sudo /sbin/reboot'
 alias poweroff='sudo /sbin/poweroff'
 alias ranger='source /usr/lib/python-exec/python3.7/ranger'
+
+export PULSE_SERVER=tcp:localhost:4713
