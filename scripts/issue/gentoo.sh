@@ -13,4 +13,4 @@ echo '/   / \\\\___\\\\|/  \\\\_|| |  \\\\___/ \\\\___/'
 echo '\\\\__/ '$CB'Gentoo '$WB'Linux '$CN'|_| '$WN'\\r :: '$WB'\\l'
 echo ''
 echo $BN'\\d'
-echo $W
+echo $WN
