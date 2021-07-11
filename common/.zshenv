@@ -17,7 +17,7 @@ alias шк=cp
 alias зф=la
 
 # shortcut
-alias ct='xdg-open "$(pwd)" &' # copy terminal
+alias ct='alacritty --working-directory "$(pwd)" &' # copy terminal
 alias d='dirs -pv'
 
 # rlwrap
