@@ -237,7 +237,7 @@ set $mon1 "HDMI-A-1"
 set $mon2 "HDMI-A-0"
 
 # commands
-set $terminal "exec termite"
+set $terminal "exec alacritty"
 set $launcher "exec --no-startup-id rofi -show run"
 set $toggle_audio "exec sh ~/scripts/cycle_audio.sh"
 
