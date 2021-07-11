@@ -1,5 +1,7 @@
 from binds_ru import bind_russian
 
+config.load_autoconfig(False)
+
 bind_russian(config)
 
 c.content.geolocation = False
