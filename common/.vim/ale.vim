@@ -1,6 +1,11 @@
 packloadall
 silent! helptags ALL
 
+nnoremap <leader>d :ALEGoToDefinition<CR>
+nnoremap <leader>r :ALEFindReferences<CR>
+nnoremap <leader>rn :ALERename<CR>
+nnoremap <leader>co :ALECodeAction<CR>
+
 let g:ale_linters = {
 \   'rust': ['analyzer'],
 \}
