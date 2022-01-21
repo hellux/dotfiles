@@ -28,5 +28,13 @@ set wildmenu
 set laststatus=2
 set showcmd
 
+nnoremap <C-n> :cnext<cr>
+nnoremap <C-p> :cprev<cr>
+
+let mapleader = " "
+
 source ~/.vim/whitespace.vim
 source ~/.vim/ft.vim
+
+source ~/.vim/fzf.vim
+source ~/.vim/fugitive.vim
