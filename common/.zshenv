@@ -1,5 +1,8 @@
 [ -r ~/.zshenv.local ] && source ~/.zshenv.local
 
+export HISTSIZE=99999999
+export SAVEHIST=99999999
+
 export EDITOR=vim
 export VISUAL=vim
 
@@ -23,7 +26,3 @@ alias d='dirs -pv'
 # rlwrap
 alias maxima='rlwrap -pyellow maxima'
 alias sbcl='rlwrap -pblue sbcl'
-
-# java options
-export JAVA_FONTS=/usr/share/fonts/TTF
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dsun.java2d.opengl=true -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Djdk.gtk.version=3'
