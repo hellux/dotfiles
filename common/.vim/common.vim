@@ -3,8 +3,6 @@ filetype off
 
 filetype plugin indent on
 
-map Y y$
-
 set encoding=utf-8
 
 set ve=block
