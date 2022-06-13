@@ -29,6 +29,22 @@ for _, lsp in ipairs(servers) do
     require('lspconfig')[lsp].setup { on_attach = on_attach }
 end
 
+require('lspconfig')['rust_analyzer'].setup {
+    settings = {
+        ["rust-analyzer"] = {
+            cargo = {
+                allFeatures = true,
+            },
+            procMacro = {
+                enable = true,
+            },
+            checkOnSave = {
+                extraArgs={"--target-dir", "/home/noah/.cache/rust-analyzer"},
+            },
+        }
+    }
+}
+
 -- hide inline warnings/lints
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false }
