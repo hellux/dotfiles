@@ -185,23 +185,6 @@ bindcode $mod+Shift+32 restart
 # exit i3 (logs you out of your X session)
 bindcode $mod+Shift+53 exit
 
-### MODES
-
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        set $length 1
-        bindcode 44 resize shrink width $length px or $length ppt
-        bindcode 55 resize grow height $length px or $length ppt
-        bindcode 54 resize shrink height $length px or $length ppt
-        bindcode 33 resize grow width $length px or $length ppt
-
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindcode $mod+32 mode "default"
-}
-bindcode $mod+r mode "resize"
-
 ### AUTOSTART
 
 exec --no-startup-id picom -b
@@ -232,14 +215,15 @@ set $darkblack   #1d2021
 set $transparent #00000080
 
 # monitors
-set $mon0 "DVI-D-0"
+set $mon0 "DisplayPort-0"
 set $mon1 "HDMI-A-1"
-set $mon2 "HDMI-A-0"
+set $mon2 "DVI-D-0"
 
 # commands
 set $terminal "exec alacritty"
 set $launcher "exec --no-startup-id rofi -show run"
 set $toggle_audio "exec sh ~/scripts/cycle_audio.sh"
+set $toggle_res "exec sh ~/scripts/toggle_res.sh.sh DisplayPort-0 2560x1440 3840x2160"
 
 ### WORKSPACE ASSIGNMENTS
 
@@ -287,6 +271,9 @@ bindsym $mod+Shift+Return $terminal
 
 # toggle audio output
 bindcode $mod+Shift+57 $toggle_audio
+
+# toggle main screen resolution
+bindcode $mod+Shift+58 $toggle_res
 
 ### i3 BAR
 
