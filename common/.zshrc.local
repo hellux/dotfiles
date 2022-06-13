@@ -1,6 +1,9 @@
 # vi mode
 set -o vi
 
+# cmdline edit
+bindkey -M viins '^E' edit-command-line
+
 # completion
 #zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'l:|=* r:|=*'
