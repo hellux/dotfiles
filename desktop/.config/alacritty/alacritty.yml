@@ -2,6 +2,9 @@ import:
   - ~/.config/alacritty/common.yml
 
 font:
-  size: 11.5
+  size: 15
   offset:
     x: -1
+
+scrolling:
+    history: 100000
