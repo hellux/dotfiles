@@ -1,5 +1,9 @@
 [ -r ~/.zshenv.local ] && source ~/.zshenv.local
 
+export XKB_DEFAULT_LAYOUT="se"
+export XKB_DEFAULT_VARIANT="dvorak"
+export XKB_DEFAULT_OPTIONS="caps:escape"
+
 export HISTSIZE=99999999
 export SAVEHIST=99999999
 
