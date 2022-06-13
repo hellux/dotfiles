@@ -24,7 +24,7 @@ lua << EOF
 local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 end
-local servers = { 'rust_analyzer' }
+local servers = { 'rust_analyzer', 'clangd' }
 for _, lsp in ipairs(servers) do
     require('lspconfig')[lsp].setup { on_attach = on_attach }
 end
