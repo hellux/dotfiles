@@ -5,5 +5,8 @@ if [ -f ~/.Xresources ]; then
 fi
 
 mkdir -p /tmp/xdg /tmp/download
+if [ ! -d ~/tmp ]; then
+    ln -s /tmp/download ~/tmp
+fi
 
 setxkbmap se -variant dvorak -option caps:escape
