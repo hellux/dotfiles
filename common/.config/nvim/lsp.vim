@@ -50,4 +50,21 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false }
 )
 
+require('lspconfig')['rust_analyzer'].setup {
+    settings = {
+        ["rust-analyzer"] = {
+            checkOnSave = {
+                extraArgs = { "--target-dir", "/home/noah/.cache/rust-analyzer" },
+                allFeatures = true,
+            },
+            rustfmt = {
+                extraArgs = { "--target-dir", "/home/noah/.cache/rust-analyzer" },
+            },
+            runnables = {
+                cargoExtraArgs = { "--target-dir", "/home/noah/.cache/rust-analyzer" },
+            }
+        },
+    }
+}
+
 EOF
