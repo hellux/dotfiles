@@ -1,0 +1,14 @@
+[user]
+	name = Noah Hellman
+	email = noah.hellman@protonmail.com
+
+[merge]
+    conflictStyle = diff3
+    tool = nvimdiff
+
+[diff]
+    colorMoved = true
+    colorMovedWS = allow-indentation-change
+
+[worktree]
+    guessRemote = true
