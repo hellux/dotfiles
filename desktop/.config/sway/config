@@ -19,21 +19,24 @@ set $transparent #00000080
 
 # monitors
 set $mon0 DP-1
-set $mon1 HDMI-A-2
-set $mon2 DVI-D-1
+set $mon1 DP-3
+set $mon2 HDMI-A-1
 
+# 2160p 32" vs 1080p 24" => 1080p scale = (1080/24) / (2160/32) = 2/3
 output $mon0 {
-    pos 1920 0
+    pos 2880 0
     res 3840x2160@144Hz
-    scale 1.6
+    scale 1.0
 }
 output $mon1 {
     pos 0 0
     res 1920x1080@60Hz
+    scale 0.666666
 }
 output $mon2 {
-    pos 4320 0
-    res 1920x1080@120Hz
+    pos 6720 0
+    res 1920x1080@60Hz
+    scale 0.666666
 }
 
 # keyboard
@@ -92,17 +95,12 @@ assign [class="^Zathura$"] $ws8
 assign [title=".pdf$"] $ws8
 
 assign [class="^Steam$"] $ws12
-for_window [class="^Steam$" title="^Друзья$"] floating enable
-for_window [class="^Steam$" title="Новости"] floating enable
-for_window [class="^Steam$" title="Чат$"] floating enable
-for_window [class="^Steam$" title="^Настройки$"] floating enable
-for_window [class="^Steam$" title="^Steam Guard"] floating enable
 
 # binds
 set $mod Mod1
 
 set $terminal exec alacritty
-set $launcher exec BEMENU_BACKEND=wayland BEMENU_SCALE=2 bemenu-run
+set $launcher exec BEMENU_BACKEND=wayland BEMENU_SCALE=3 bemenu-run
 set $toggle_audio exec sh ~/scripts/cycle_audio.sh
 set $screenshot exec grimshot save area
 set $set_wallpapers exec cat /net/narwhal/img/bnet/fullhd | sh scripts/wp.sh $mon0 $mon1 $mon2
@@ -181,13 +179,15 @@ floating_modifier $mod
 default_border pixel
 hide_edge_borders both
 
-font pango:Source Code Pro
+seat seat0 xcursor_theme Adwaita 32
+
+font pango:Fira Mono 22
 
 bar {
     status_command i3status
     position top
     strip_workspace_numbers yes
-    height 30
+    height 50
 
     bindsym button4 nop
     bindsym button5 nop

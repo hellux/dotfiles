@@ -24,7 +24,7 @@ done
 
 for url in $urls; do
     if youtube-dl -q -s -f "bestvideo+bestaudio" "$url";
-    then format="bestvideo[height<=?1080]+bestaudio"
+    then format="bestvideo+bestaudio"
     else format="best"
     fi
 

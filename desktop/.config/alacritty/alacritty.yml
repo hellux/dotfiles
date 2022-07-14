@@ -2,9 +2,11 @@ import:
   - ~/.config/alacritty/common.yml
 
 font:
-  size: 15
+  size: 23
   offset:
     x: -1
+  normal:
+    family: fira mono
 
 scrolling:
     history: 100000

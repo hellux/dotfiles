@@ -1,3 +1,5 @@
 #include ".Xresources.d/xft"
 Xft.dpi: 120
 #include ".Xresources.d/gruvbox"
+Xcursor.theme: Adwaita
+Xcursor.size: 32
