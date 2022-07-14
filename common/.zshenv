@@ -32,3 +32,17 @@ alias d='dirs -pv'
 # rlwrap
 alias maxima='rlwrap -pyellow maxima'
 alias sbcl='rlwrap -pblue sbcl'
+
+alias bbb='bcb 2 2'
+alias bbh='bcb 2 16'
+alias bbd='bcb 2 10'
+alias bhb='bcb 16 2'
+alias bhh='bcb 16 16'
+alias bhd='bcb 16 10'
+alias bdb='bcb 10 2'
+alias bdh='bcb 10 16'
+alias bdd='bcb 10 10'
+
+alias bb=bbb
+alias bh=bhh
+alias bd=bdd
