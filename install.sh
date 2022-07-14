@@ -3,7 +3,11 @@
 #
 # usage: ./install CONFIG_DIR
 
-[ -z "$1" ] && exit 1
+# symlink scripts dir
+rm -f ~/scripts
+ln -s "$(pwd)/scripts" ~/scripts
+
+[ -z "$1" ] && exit 0
 
 config_dir="$1"
 configs="$(find "$config_dir" -type f)"
