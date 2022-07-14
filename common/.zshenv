@@ -46,3 +46,17 @@ alias bdd='bcb 10 10'
 alias bb=bbb
 alias bh=bhh
 alias bd=bdd
+
+# git
+alias gac='git add -u && git rebase --continue'
+alias gc='git commit'
+alias gco='git checkout'
+alias gcp='git checkout -p'
+alias gd='git diff'
+alias gds='git diff --stat'
+alias gl='git log'
+alias glo='git log --oneline --graph'
+alias glp='git log -p'
+alias gls='git log --stat'
+alias gp='git push'
+alias gr='git rebase'
