@@ -25,6 +25,7 @@ set display=lastline
 set wildmenu
 set laststatus=2
 set showcmd
+set shortmess-=S
 
 nnoremap <C-n> :cnext<cr>
 nnoremap <C-p> :cprev<cr>
