@@ -108,6 +108,10 @@ set $set_wallpapers exec cat /net/narwhal/img/bnet/fullhd | sh scripts/wp.sh $mo
 bindsym $mod+Shift+Return $terminal
 bindsym --to-code $mod+g $launcher
 bindsym --to-code $mod+Shift+b $toggle_audio
+bindsym --to-code $mod+m exec swaymsg 'output - dpms toggle'
+bindsym --to-code $mod+Shift+m {
+    exec swaymsg 'output $mon0 dpms toggle; output $mon1 dpms toggle; output $mon2 dpms toggle'
+}
 bindsym --to-code $mod+Shift+s $screenshot
 bindsym --to-code $mod+Shift+w $set_wallpapers
 
