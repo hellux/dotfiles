@@ -27,6 +27,7 @@ output $mon0 {
     pos 2880 0
     res 3840x2160@144Hz
     scale 1.0
+    adaptive_sync on
 }
 output $mon1 {
     pos 0 0
@@ -45,6 +46,7 @@ input type:keyboard {
     xkb_variant dvorak,,
     xkb_options caps:escape,grp:alt_caps_toggle
 }
+input xkb_numlock enabled
 
 # workspaces
 set $ws1 "1 A"
@@ -103,16 +105,16 @@ set $terminal exec alacritty
 set $launcher exec BEMENU_BACKEND=wayland BEMENU_SCALE=3 bemenu-run
 set $toggle_audio exec sh ~/scripts/cycle_audio.sh
 set $screenshot exec grimshot save area
-set $set_wallpapers exec cat /net/narwhal/img/bnet/fullhd | sh scripts/wp.sh $mon0 $mon1 $mon2
+set $colorpick exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy
+set $set_wallpapers exec cat /net/narwhal/img/bnet/fullhd | ./scripts/wp.sh $mon0 $mon1 $mon2
 
 bindsym $mod+Shift+Return $terminal
 bindsym --to-code $mod+g $launcher
 bindsym --to-code $mod+Shift+b $toggle_audio
 bindsym --to-code $mod+m exec swaymsg 'output - dpms toggle'
-bindsym --to-code $mod+Shift+m {
-    exec swaymsg 'output $mon0 dpms toggle; output $mon1 dpms toggle; output $mon2 dpms toggle'
-}
+bindsym --to-code $mod+Shift+m exec swaymsg 'output * dpms off'
 bindsym --to-code $mod+Shift+s $screenshot
+bindsym --to-code $mod+Shift+n $colorpick
 bindsym --to-code $mod+Shift+w $set_wallpapers
 
 bindsym --to-code $mod+c kill
