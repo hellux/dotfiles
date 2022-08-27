@@ -6,10 +6,10 @@
 # absolute path. No other format is supported.
 # 
 XDG_DOWNLOAD_DIR="/tmp/download"
-XDG_DESKTOP_DIR="/tmp/xdg_basedir"
-XDG_TEMPLATES_DIR="/tmp/xdg_basedir"
-XDG_PUBLICSHARE_DIR="/tmp/xdg_basedir"
-XDG_DOCUMENTS_DIR="/tmp/xdg_basedir"
-XDG_MUSIC_DIR="/tmp/xdg_basedir"
-XDG_PICTURES_DIR="/tmp/xdg_basedir"
-XDG_VIDEOS_DIR="/tmp/xdg_basedir"
+XDG_DESKTOP_DIR="/tmp/download"
+XDG_TEMPLATES_DIR="/tmp/download"
+XDG_PUBLICSHARE_DIR="/tmp/download"
+XDG_DOCUMENTS_DIR="/tmp/download"
+XDG_MUSIC_DIR="/tmp/download"
+XDG_PICTURES_DIR="/tmp/download"
+XDG_VIDEOS_DIR="/tmp/download"
