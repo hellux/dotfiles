@@ -220,5 +220,5 @@ client.urgent           $darkred    $darkred    $black      $darkred    $darkred
 
 # autostart
 exec dunst
-exec $set_wallpapers
+exec_always $set_wallpapers
 exec sh ~/scripts/init_desktop.sh
