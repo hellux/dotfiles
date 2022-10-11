@@ -3,7 +3,7 @@
 	email = noah@hllmn.net
 
 [merge]
-    conflictStyle = diff3
+    conflictStyle = zdiff3
     tool = nvimdiff
 
 [diff]
