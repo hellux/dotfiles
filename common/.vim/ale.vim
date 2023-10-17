@@ -46,5 +46,10 @@ let g:ale_rust_analyzer_config = {
 
 let g:ale_fixers = {
 \   'rust': ['rustfmt'],
+\   'c': ['clang-format'],
+\   'cpp': ['clang-format'],
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \}
+
+let g:ale_c_clangformat_style_option = '{IndentWidth: 4, ColumnLimit: 100}'
+let g:ale_cpp_clangformat_style_option = '{IndentWidth: 4, ColumnLimit: 100}'
