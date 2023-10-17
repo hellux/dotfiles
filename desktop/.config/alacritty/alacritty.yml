@@ -2,7 +2,7 @@ import:
   - ~/.config/alacritty/common.yml
 
 font:
-  size: 23
+  size: 28
   offset:
     x: -1
   normal:

@@ -1,24 +1,23 @@
 ### VARIABLE ASSIGNMENTS
 
 # workspace names
-set $ws1 "1 "
-set $ws2 "2 "
-set $ws3 "3 "
-set $ws4 "4 "
-set $ws5 "5 "
+set $ws1 "A"
+set $ws2 "O"
+set $ws3 "E"
+set $ws4 "U"
+set $ws5 "I"
 
-set $ws6 "6 "
-set $ws7 "7 "
-set $ws8 "8 "
-set $ws9 "9 "
-set $ws10 "10 "
+set $ws6 "Å"
+set $ws7 "Ä"
+set $ws8 "Ö"
+set $ws9 "P"
+set $ws10 "Y"
 
-set $ws11 "11 "
-set $ws12 "12 "
-set $ws13 "13 "
-set $ws14 "14 "
-set $ws15 "15 "
-
+set $ws11 "1"
+set $ws12 "2"
+set $ws13 "3"
+set $ws14 "4"
+set $ws15 "5"
 
 # commands
 set $browser exec qutebrowser
@@ -187,9 +186,7 @@ bindcode $mod+Shift+53 exit
 
 ### AUTOSTART
 
-exec --no-startup-id picom -b
-exec --no-startup-id dunst #desktop notification daemon, ~/.config/dunst/dunstrc
-exec --no-startup-id ~/.fehbg
+exec --no-startup-id $set_wallpapers
 
 ### VARIABLE ASSIGNMENTS
 
@@ -216,14 +213,16 @@ set $transparent #00000080
 
 # monitors
 set $mon0 "DisplayPort-0"
-set $mon1 "HDMI-A-1"
-set $mon2 "DVI-D-0"
+set $mon1 "HDMI-A-0"
+set $mon2 "DisplayPort-1"
 
 # commands
 set $terminal "exec alacritty"
-set $launcher "exec --no-startup-id rofi -show run"
+set $launcher "exec --no-startup-id dmenu_run"
 set $toggle_audio "exec sh ~/scripts/cycle_audio.sh"
 set $toggle_res "exec sh ~/scripts/toggle_res.sh.sh DisplayPort-0 2560x1440 3840x2160"
+set $set_wallpapers "exec < /net/narwhal/img/bnet/fullhd ./scripts/wp.sh 3"
+set $blank_monitors "exec sleep 1 && xset dpms force off"
 
 ### WORKSPACE ASSIGNMENTS
 
@@ -261,7 +260,7 @@ new_window pixel
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Source Code Pro, FontAwesome 11
+font pango:Fira Mono 28
 
 ### KEYBIND ASSIGNMENTS
 
@@ -271,9 +270,8 @@ bindsym $mod+Shift+Return $terminal
 
 # toggle audio output
 bindcode $mod+Shift+57 $toggle_audio
-
-# toggle main screen resolution
-bindcode $mod+Shift+58 $toggle_res
+bindcode $mod+Shift+58 $blank_monitors
+bindcode $mod+Shift+59 $set_wallpapers
 
 ### i3 BAR
 
