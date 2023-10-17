@@ -19,25 +19,24 @@ set $transparent #00000080
 
 # monitors
 set $mon0 DP-1
-set $mon1 DP-3
-set $mon2 HDMI-A-1
+set $mon1 HDMI-A-1
+set $mon2 DP-2
 
-# 2160p 32" vs 1080p 24" => 1080p scale = (1080/24) / (2160/32) = 2/3
-output $mon0 {
-    pos 2880 0
-    res 3840x2160@144Hz
-    scale 1.0
-    adaptive_sync on
-}
 output $mon1 {
     pos 0 0
-    res 1920x1080@60Hz
-    scale 0.666666
+    res 2560x2880@60Hz
+    scale 1
+}
+output $mon0 {
+    pos 2560 0
+    res 3840x2160@144Hz
+    scale 1
+    adaptive_sync on
 }
 output $mon2 {
-    pos 6720 0
+    pos 4720
     res 1920x1080@60Hz
-    scale 0.666666
+    scale 1
 }
 
 # keyboard
@@ -102,7 +101,7 @@ assign [class="^Steam$"] $ws12
 set $mod Mod1
 
 set $terminal exec alacritty
-set $launcher exec BEMENU_BACKEND=wayland BEMENU_SCALE=3 bemenu-run
+set $launcher exec bemenu-run
 set $toggle_audio exec sh ~/scripts/cycle_audio.sh
 set $screenshot exec grimshot save area
 set $colorpick exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy
@@ -172,7 +171,7 @@ bindsym --to-code $mod+Shift+r reload
 bindsym --to-code $mod+Shift+q exit
 
 # options
-gaps inner 7
+gaps inner 5
 gaps outer 0
 
 force_display_urgency_hint 0 ms
@@ -182,18 +181,17 @@ floating_minimum_size -1 x -1
 floating_maximum_size -1 x -1
 floating_modifier $mod
 
-default_border pixel
-hide_edge_borders both
+default_border pixel 1
 
-seat seat0 xcursor_theme Adwaita 32
+seat seat0 xcursor_theme Neutral++_White 64
 
-font pango:Fira Mono 22
+font pango:Fira Mono 28
 
 bar {
     status_command i3status
     position top
     strip_workspace_numbers yes
-    height 50
+    height 56
 
     bindsym button4 nop
     bindsym button5 nop
@@ -213,7 +211,7 @@ bar {
 }
 
 # class                 border  	backgr. 	text     	indicator 	child_border
-client.focused          $black      $black      $darkwhite  $darkblack  $darkblack
+client.focused          $black      $black      $darkwhite  $darkblack  $white
 client.unfocused        $black      $black      $white      $darkblack  $darkblack
 client.focused_inactive $black      $black      $white      $darkblack  $darkblack
 client.urgent           $darkred    $darkred    $black      $darkred    $darkred
