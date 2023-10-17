@@ -6,7 +6,7 @@ sinks="$(pacmd list-sinks | grep index:)"
 sink_nums=$(echo "$sinks" | awk -F':' '$1 ~ /[*]? index/ {print $2}')
 n_sinks=$(echo "$sinks" | wc -l)
 
-current_index=$(echo "$sinks" | awk -F':' '$1 ~ /* index/ {print NR}')
+current_index=$(echo "$sinks" | awk -F':' '$1 ~ /\* index/ {print NR}')
 
 next_index=$((current_index+1))
 if [ "$next_index" -gt "$n_sinks" ]; then
