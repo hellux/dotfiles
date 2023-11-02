@@ -10,3 +10,6 @@ cursor:
   thickness: 0.1
   blinkning: on
   blink_interval: 1000
+
+key_bindings:
+  - { key: Return, mods: Control|Shift, action: SpawnNewInstance}

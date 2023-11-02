@@ -26,7 +26,7 @@ alias шк=cp
 alias зф=la
 
 # shortcut
-alias ct='alacritty --working-directory "$(pwd)" &' # copy terminal
+alias ct='echo use Ctrl+Shift+Enter'
 alias d='dirs -pv'
 
 # rlwrap
