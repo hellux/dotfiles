@@ -20,6 +20,7 @@ set omnifunc=ale#completion#OmniFunc
 set signcolumn=number
 
 let g:ale_lint_on_text_changed = 'never'
+let g:ale_virtualtext_cursor = 'disabled'
 let g:ale_floating_preview = 1
 let g:ale_set_loclist = 0
 let g:ale_set_quicklist = 1
