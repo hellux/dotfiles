@@ -188,9 +188,10 @@ seat seat0 xcursor_theme Neutral++_White 64
 font pango:Fira Mono 28
 
 bar {
-    status_command i3status
+    status_command SCRIPT_DIR=/usr/libexec/i3blocks i3blocks
     position top
     strip_workspace_numbers yes
+    separator_symbol " | "
     height 56
 
     bindsym button4 nop
@@ -199,7 +200,6 @@ bar {
 	colors {
         background          $transparent
         statusline          $white
-        separator           $transparent
 
         #                	border  		bg      		text
         focused_workspace  	$transparent 	$transparent 	$darkwhite

@@ -1,0 +1,38 @@
+# Global properties
+command=$SCRIPT_DIR/$BLOCK_NAME
+
+[iface]
+command=$SCRIPT_DIR/$BLOCK_NAME | sed "s/ //g"
+interval=5
+separator=false
+
+[bandwidth3]
+command=PRINTF_COMMAND='printf "%5.2f %5.2f MiB/s\n", wx, rx' $SCRIPT_DIR/$BLOCK_NAME -u MB -t1
+interval=persist
+
+[disk]
+DIR=/
+interval=5
+separator=false
+
+[disk-io]
+command=LABEL=" " $SCRIPT_DIR/$BLOCK_NAME -s" " -P2 -M -t1 -R '/.+/'
+interval=persist
+
+[load_average]
+interval=1
+separator=false
+
+[cpu_usage]
+command=LABEL=" " $SCRIPT_DIR/$BLOCK_NAME
+interval=1
+
+[temperature]
+interval=1
+
+[memory]
+interval=5
+
+[time]
+command=date '+%Y-%m-%d %H:%M'
+interval=5
