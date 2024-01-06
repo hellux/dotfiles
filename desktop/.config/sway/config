@@ -15,7 +15,7 @@ set $darkwhite   #a89984
 set $white       #ebdbb2
 set $black       #282828
 set $darkblack   #1d2021
-set $transparent #00000080
+set $transparent #000000c0
 
 # monitors
 set $mon0 DP-1
