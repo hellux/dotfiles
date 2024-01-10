@@ -1,0 +1,13 @@
+import = ["~/.config/alacritty/common.toml"]
+
+[font]
+size = 28
+
+[font.normal]
+family = "fira mono"
+
+[font.offset]
+x = -1
+
+[scrolling]
+history = 100000
