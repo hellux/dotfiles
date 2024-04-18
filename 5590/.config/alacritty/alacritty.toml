@@ -1,0 +1,7 @@
+import = ["~/.config/alacritty/common.toml"]
+
+[font]
+size = 12.5
+
+[font.offset]
+x = -1
