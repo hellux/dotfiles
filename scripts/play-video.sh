@@ -29,7 +29,7 @@ for url in $urls; do
     fi
 
     if [ "$queue" = "true" ] && ps -eo command | grep -q "^mpv $MAGIC"; then
-        mpv_cmd="loadfile ytdl://$url append-play ytdl-format=$format"
+        mpv_cmd="loadfile ytdl://$url append-play 0 ytdl-format=$format"
         echo $mpv_cmd | socat - $fifo
     else
         mpv $args --ytdl-format=$format "ytdl://$url" &
