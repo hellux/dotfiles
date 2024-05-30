@@ -38,7 +38,6 @@ let g:ale_rust_analyzer_config = {
 \           'extraArgs': [
 \               "--target-dir",
 \               "/home/noah/.cache/rust-analyzer",
-\               "--edition", "2021",
 \               "--",
 \               "-W",
 \               "clippy::pedantic",
