@@ -3,3 +3,4 @@ export VDPAU_DRIVER=r300
 # hipdpi
 export MOZ_ENABLE_WAYLAND=1
 export GDK_SCALE=2
+export QT_FONT_DPI=240
