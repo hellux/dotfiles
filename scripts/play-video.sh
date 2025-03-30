@@ -1,4 +1,4 @@
-#!/bin/env sh
+#!/bin/sh
 
 fifo=~/.cache/mp_pipe
 [ ! -e $fifo ] && mkfifo $fifo
