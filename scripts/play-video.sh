@@ -19,11 +19,11 @@ shift $((OPTIND-1))
 
 urls=""
 for url in $*; do
-    urls="$urls $(youtube-dl -s -j "$*" | jq -M '.webpage_url' | tr -d \")"
+    urls="$urls $(yt-dlp -s -j "$*" | jq -M '.webpage_url' | tr -d \")"
 done
 
 for url in $urls; do
-    if youtube-dl -q -s -f "bestvideo+bestaudio" "$url";
+    if yt-dlp -q -s -f "bestvideo+bestaudio" "$url";
     then format="bestvideo+bestaudio"
     else format="best"
     fi
