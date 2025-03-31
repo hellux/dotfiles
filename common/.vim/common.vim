@@ -36,4 +36,5 @@ source ~/.vim/whitespace.vim
 source ~/.vim/ft.vim
 
 source ~/.vim/fzf.vim
+source ~/.vim/ale.vim
 source ~/.vim/fugitive.vim
