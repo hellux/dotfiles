@@ -53,6 +53,7 @@ let g:ale_fixers = {
 \   'rust': ['rustfmt'],
 \   'c': ['clang-format'],
 \   'cpp': ['clang-format'],
+\   'nix': ['nixfmt'],
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \}
 
