@@ -9,7 +9,7 @@ bindkey -M viins '^E' edit-command-line
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'l:|=* r:|=*'
 
 # prompt color
-if [[ "$HOST" = *"5590"* ]]; then
+if [[ "$HOST" = *"bovinae"* ]]; then
     zstyle ':prompt:grml:*:items:user' pre $'%{\e[1;35m%}' # magenta
 elif [[ "$HOST" = *"dev"* ]]; then
     zstyle ':prompt:grml:*:items:user' pre $'%{\e[1;31m%}' # red
