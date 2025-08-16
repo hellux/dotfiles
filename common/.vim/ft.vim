@@ -7,3 +7,4 @@ autocmd BufRead,BufNewFile *.mac set ft=maxima
 autocmd FileType mail setlocal tw=72
 autocmd FileType gitcommit setlocal tw=72
 autocmd FileType html setlocal sw=2 ts=2 sts=2
+autocmd FileType nix setlocal ts=2 sw=2 sts=2
