@@ -17,22 +17,16 @@ shift $((OPTIND-1))
 
 [ "$queue" = "true" ] && args="$MAGIC $args"
 
-urls=""
-for url in $*; do
-    urls="$urls $(yt-dlp -s -j "$*" | jq -M '.webpage_url' | tr -d \")"
-done
+urls="$*"
 
+max_res=1080
+ytdlp="format-sort=res:$max_res"
 for url in $urls; do
-    if yt-dlp -q -s -f "bestvideo+bestaudio" "$url";
-    then format="bestvideo+bestaudio"
-    else format="best"
-    fi
-
-    if [ "$queue" = "true" ] && ps -eo command | grep -q "^mpv $MAGIC"; then
-        mpv_cmd="loadfile ytdl://$url append-play 0 ytdl-format=$format"
+    if [ "$queue" = "true" ] && pgrep -f "mpv $MAGIC" >/dev/null; then
+        mpv_cmd="loadfile ytdl://$url append-play 0 ytdl-raw-options=$ytdlp"
+        echo $mpv_cmd
         echo $mpv_cmd | socat - $fifo
     else
-        mpv $args --ytdl-format=$format "ytdl://$url" &
+        mpv $args --ytdl-raw-options="$ytdlp" "ytdl://$url" &
     fi
 done
-
