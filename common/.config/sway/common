@@ -78,7 +78,7 @@ assign [class="^Steam$"] $ws12
 set $mod Mod1
 
 set $terminal exec alacritty
-set $launcher exec bemenu-run
+set $launcher exec bemenu-run -H 56 --fn "Fira Mono 24" --hp 10
 set $toggle_audio exec sh ~/scripts/cycle_audio.sh
 set $screenshot exec grimshot save area
 set $colorpick exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy
