@@ -5,7 +5,7 @@ fifo=~/.cache/mp_pipe
 
 MAGIC="--title=queue"
 
-args="--keep-open=yes --really-quiet --input-ipc-server=$fifo"
+args="--keep-open=yes --quiet --input-ipc-server=$fifo"
 queue=false
 while getopts q flag; do
     case "$flag" in
