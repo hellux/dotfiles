@@ -183,7 +183,7 @@ floating_modifier $mod
 
 default_border pixel 1
 
-seat seat0 xcursor_theme Neutral++_White 64
+seat seat0 xcursor_theme Adwaita 64
 
 font pango:Fira Mono 28
 
