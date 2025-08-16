@@ -28,7 +28,9 @@ zstyle ':completion:complete-file::::' completer _files
 bindkey '^F' complete-file
 
 
-# welcome fortune
+command -v fortune > /dev/null && \
+    command -v cowsay > /dev/null && \
+    command -v shuf > /dev/null && \
 command fortune -sa | \
     sed 's/\n/ /g' | \
     $(shuf -n 1 -e cowsay cowthink) \
