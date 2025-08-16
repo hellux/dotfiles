@@ -1,0 +1,13 @@
+# monitors
+set $mon0 eDP-1
+set $mon1 HDMI-1
+
+include "common"
+
+input type:touchpad {
+    natural_scroll enabled
+}
+
+font pango:Fira Mono 24
+
+exec_always swaymsg output eDP-1 bg .wp.png fill

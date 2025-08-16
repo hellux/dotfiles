@@ -1,0 +1,188 @@
+## colors (gruvbox)
+set $darkred     #cc241d
+set $red         #fb4934
+set $darkgreen   #98971a
+set $green       #b8bb26
+set $darkyellow  #d79921
+set $yellow      #fabd2f
+set $darkblue    #458588
+set $blue        #83a598
+set $darkmagenta #b16286
+set $magenta     #d3869b
+set $darkcyan    #689d6a
+set $cyan        #8ec07c
+set $darkwhite   #a89984
+set $white       #ebdbb2
+set $black       #282828
+set $darkblack   #1d2021
+set $transparent #000000c0
+
+# keyboard
+input type:keyboard {
+    xkb_layout se,ru,se
+    xkb_variant dvorak,,
+    xkb_options caps:escape,grp:alt_caps_toggle
+}
+
+# workspaces
+set $ws1 "1 A"
+set $ws2 "2 O"
+set $ws3 "3 E"
+set $ws4 "4 U"
+set $ws5 "5 I"
+
+set $ws6 "6 Å"
+set $ws7 "7 Ä"
+set $ws8 "8 Ö"
+set $ws9 "9 P"
+set $ws10 "10 Y"
+
+set $ws11 "11 1"
+set $ws12 "12 2"
+set $ws13 "13 3"
+set $ws14 "14 4"
+set $ws15 "15 5"
+
+workspace $ws1 output $mon0
+workspace $ws2 output $mon0
+workspace $ws3 output $mon0
+workspace $ws4 output $mon0
+workspace $ws5 output $mon0
+workspace $ws6 output $mon1
+workspace $ws7 output $mon1
+workspace $ws8 output $mon1
+workspace $ws9 output $mon1
+workspace $ws10 output $mon1
+workspace $ws11 output $mon2
+workspace $ws12 output $mon2
+workspace $ws13 output $mon2
+workspace $ws14 output $mon2
+workspace $ws15 output $mon2
+
+# remove default numbered workspaces from each output
+exec swaymsg workspace $ws10
+exec swaymsg workspace $ws6
+exec swaymsg workspace $ws1
+
+assign [class="^mpv$"] $ws4
+for_window [class="^mpv$"] fullscreen
+
+assign [class="^qBittorrent$"] $ws7
+
+assign [class="^Zathura$"] $ws8
+assign [title=".pdf$"] $ws8
+
+assign [class="^Steam$"] $ws12
+
+# binds
+set $mod Mod1
+
+set $terminal exec alacritty
+set $launcher exec bemenu-run
+set $toggle_audio exec sh ~/scripts/cycle_audio.sh
+set $screenshot exec grimshot save area
+set $colorpick exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy
+
+bindsym $mod+Shift+Return $terminal
+bindsym --to-code $mod+g $launcher
+bindsym --to-code $mod+Shift+b $toggle_audio
+bindsym --to-code $mod+Shift+s $screenshot
+bindsym --to-code $mod+Shift+n $colorpick
+
+bindsym --to-code $mod+c kill
+
+bindsym --to-code $mod+h focus left
+bindsym --to-code $mod+j focus down
+bindsym --to-code $mod+k focus up
+bindsym --to-code $mod+l focus right
+bindsym --to-code $mod+Shift+h move left
+bindsym --to-code $mod+Shift+j move down
+bindsym --to-code $mod+Shift+k move up
+bindsym --to-code $mod+Shift+l move right
+
+bindsym --to-code $mod+v split h
+bindsym --to-code $mod+s split v
+
+bindsym --to-code $mod+f fullscreen toggle
+bindsym --to-code $mod+n layout toggle split
+bindsym --to-code $mod+Shift+space floating toggle
+bindsym --to-code $mod+space focus mode_toggle
+
+bindsym --to-code $mod+a workspace $ws1
+bindsym --to-code $mod+o workspace $ws2
+bindsym --to-code $mod+e workspace $ws3
+bindsym --to-code $mod+u workspace $ws4
+bindsym --to-code $mod+i workspace $ws5
+bindcode $mod+24 workspace $ws6
+bindcode $mod+25 workspace $ws7
+bindcode $mod+26 workspace $ws8
+bindsym --to-code $mod+p workspace $ws9
+bindsym --to-code $mod+y workspace $ws10
+bindsym $mod+1 workspace $ws11
+bindsym $mod+2 workspace $ws12
+bindsym $mod+3 workspace $ws13
+bindsym $mod+4 workspace $ws14
+bindsym $mod+5 workspace $ws15
+
+bindsym --to-code $mod+Shift+a move container to workspace $ws1
+bindsym --to-code $mod+Shift+o move container to workspace $ws2
+bindsym --to-code $mod+Shift+e move container to workspace $ws3
+bindsym --to-code $mod+Shift+u move container to workspace $ws4
+bindsym --to-code $mod+Shift+i move container to workspace $ws5
+bindcode $mod+Shift+24 move container to workspace $ws6
+bindcode $mod+Shift+25 move container to workspace $ws7
+bindcode $mod+Shift+26 move container to workspace $ws8
+bindsym --to-code $mod+Shift+p move container to workspace $ws9
+bindsym --to-code $mod+Shift+y move container to workspace $ws10
+bindsym $mod+Shift+1 move container to workspace $ws11
+bindsym $mod+Shift+2 move container to workspace $ws12
+bindsym $mod+Shift+3 move container to workspace $ws13
+bindsym $mod+Shift+4 move container to workspace $ws14
+bindsym $mod+Shift+5 move container to workspace $ws15
+
+bindsym --to-code $mod+Shift+r reload
+bindsym --to-code $mod+Shift+q exit
+
+# options
+gaps inner 5
+gaps outer 0
+
+force_display_urgency_hint 0 ms
+focus_on_window_activation urgent
+
+floating_minimum_size -1 x -1
+floating_maximum_size -1 x -1
+floating_modifier $mod
+
+default_border pixel 1
+
+seat seat0 xcursor_theme Adwaita 64
+
+bar {
+    status_command SCRIPT_DIR=/usr/libexec/i3blocks i3blocks
+    position top
+    strip_workspace_numbers yes
+    separator_symbol " | "
+    height 56
+
+    bindsym button4 nop
+    bindsym button5 nop
+
+	colors {
+        background          $transparent
+        statusline          $white
+
+        #                	border  		bg      		text
+        focused_workspace  	$transparent 	$transparent 	$darkwhite
+        inactive_workspace 	$transparent 	$transparent 	$white
+        active_workspace   	$transparent 	$transparent 	$white
+        urgent_workspace   	$darkred     	$darkred     	$transparent
+        binding_mode       	$darkred     	$darkred     	$transparent
+    }
+}
+
+# class                 border  	backgr. 	text     	indicator 	child_border
+client.focused          $black      $black      $darkwhite  $darkblack  $white
+client.unfocused        $black      $black      $white      $darkblack  $darkblack
+client.focused_inactive $black      $black      $white      $darkblack  $darkblack
+client.urgent           $darkred    $darkred    $black      $darkred    $darkred
